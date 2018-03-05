@@ -16,6 +16,7 @@ client.on('error', err => console.error(err));
 
 app.use(cors());
 
+//Testing 1....2...3
 app.get('/', (req, res) => res.send('This is a test'));
 
 app.get('*', (req, res) => res.redirect(CLIENT_URL));
