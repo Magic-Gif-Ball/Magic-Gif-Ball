@@ -5,7 +5,7 @@ const pg = require('pg');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = process.env.POST;
+const PORT = process.env.PORT;
 const TOKEN = process.env.TOKEN;
 
 const client = new pg.Client(process.env.DATABASE_URL);
