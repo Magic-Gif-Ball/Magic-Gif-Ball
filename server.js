@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT;
+const CLIENT_URL = process.env.CLIENT_URL;
+
 const TOKEN = process.env.TOKEN;
 
 const client = new pg.Client(process.env.DATABASE_URL);
@@ -14,7 +16,9 @@ client.on('error', err => console.error(err));
 
 app.use(express.static('./public'));
 
+
 app.get('/', (req, res) => res.sendFile('index.html', {root:'./public'}));
+
 
 app.get('*', (req, res) => res.sendFile('index.html', {root:'./public'}));
 
