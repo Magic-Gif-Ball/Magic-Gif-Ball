@@ -6,7 +6,7 @@ const pg = require('pg');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = process.env.POST;
+const PORT = process.env.PORT;
 const CLIENT_URL = process.env.CLIENT_URL;
 const TOKEN = process.env.TOKEN;
 
