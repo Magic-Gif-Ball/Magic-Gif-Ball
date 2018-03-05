@@ -1,7 +1,8 @@
 
 
-@media only screen and (max-width: 640px) {
+
+@media only screen and (min-width: 640px) {
   body {
-  background-color:  #50c48a;
+  background-color: wheat;
   }
 }
