@@ -1,0 +1,26 @@
+{
+  "name": "magic-gif-ball",
+  "version": "1.0.0",
+  "description": "CF 301 Project Week App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magic-Gif-Ball/Magic-Gif-Ball.git"
+  },
+  "author": "Beverly, Tyler, Patricia ,Haron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Magic-Gif-Ball/Magic-Gif-Ball/issues"
+  },
+  "homepage": "https://github.com/Magic-Gif-Ball/Magic-Gif-Ball#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "pg": "^7.4.1"
+  }
+}
