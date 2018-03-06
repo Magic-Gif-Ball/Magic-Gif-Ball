@@ -23,8 +23,8 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.sendFile('index.html', {root:'./public'}));
 
 app.get('/api/v1/gif/random', (req, res) => {
-  giphyClient.random('gifs', {"tag": 'yes'})
-    .then((response) => {
+  giphyClient.random('gifs', {"tag": `${req.query.tag}`})
+  .then((response) => {
     //put callback here
       console.log(response.data.images.original.gif_url);
       res.send(response.data.images.original.gif_url);
