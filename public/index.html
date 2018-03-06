@@ -10,17 +10,79 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules/.css">
 
-  <title>Document</title>
+  <title>Fun with Gifs!</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Gif Magic Eight Ball" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="A fun and user-friendly game for all ages!!" />
+    <meta property=”og:description” content="A fun and user-friendly game for all ages!!" />
+    <!-- DO: -->
+    <!-- add preview image link eventually in content -->
+    <meta property="og:image" content="" />
+    <meta property="og:locale" content="en_US" />
+    <!-- DO: -->
+    <!-- add url link in content. Will be to our Heroku deployment -->
+    <meta property="og:url" content="" />
 </head>
 
 <body>
-  
 
+  <nav id="menu">
+    <ul>
+      <li>Home</li>
+      <li>History</li>
+      <li>About the Creators</li>
+    </ul>
+  </nav>
+
+  <h1>Welcome!</h1>
+
+  <section class="error-View container"></section>
+
+  <section class="about-Us container">
+  <h2>About the Creators:</h2>
+
+  <h3>Beverly</h3>
+  <p>Why she's awesome</p>
+  <h3>Patricia</h3>
+  <p>Why I'm awesome</p>
+  <h3>Tyler</h3>
+  <p>Why he's awesome</p>
+  <h3>Haron</h3>
+  <p>Why he's also awesome</p>
+  </section>
+
+  <section class="game-View container">
+      <form action="" id="question-form">
+          <label>Enter a Question to the Magic Gif Ball!
+              <input type="text" name="questionToGifBall" placeholder="Is this a good question?">
+          </label>
+          <button type="submit">Ask!</button>
+          <img src="http://via.placeholder.com/350x150" alt="">
+        </form>
+  </section>
+
+  <section class="history-View container"></section>
+
+  <section class="login-View container">
+    <form action="" id="login-form">
+      <label>Enter a Username:
+          <input type="text" id="userName" placeholder="Username">
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  
+  <!-- jQuery, Handlebars, and page.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <!-- link js files -->
-
+  <script src="scripts/model/game.js"></script>
+  <script src="scripts/view/aboutView.js"></script>
+  <script src="scripts/view/gameView.js"></script>
+  <script src="scripts/view/historyView.js"></script>
+  <script src="scripts/view/loginView.js"></script>
+  <script>app.gameView.initGamePage();</script>
 </body>
-
 </html>
