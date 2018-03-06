@@ -26,8 +26,6 @@ app.get('/api/v1/gif/random', (req, res) => {
   console.log(req.query);
   giphyClient.random('gifs', { "tag": `${req.query.tag}` })
     .then((response) => {
-      //put callback here
-      console.log(response.data.images.original.gif_url);
       res.send(response.data.images.original.gif_url);
     })
     .catch(console.error);
@@ -35,8 +33,8 @@ app.get('/api/v1/gif/random', (req, res) => {
 
 app.post('/addUser', bodyParser, (req, res) => {
   let {username, tagArray} = req.body;
-  client.query(`INSERT INTO users(username, responses) VALUES ($1, $2);`, [username, tagArray])
-    .then()
+  client.query(`INSERT INTO users(username, responses) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
+    .then(res.sendStatus(200))
     .catch (console.err);
 });
 
