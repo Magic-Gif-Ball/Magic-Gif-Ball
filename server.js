@@ -35,7 +35,8 @@ app.get('/', (req, res) => res.sendFile('index.html', {root:'./public'}));
 
 // get route with login
 app.get('/api/v1/gif/random', (req, res) => {
-  giphyClient.random('gifs', {"tag": 'yes'})
+  console.log('req body:', req.query.questionText);
+  giphyClient.random('gifs', {"tag": `${req.query.tag}`})
     .then((response) => {
     //put callback here
       console.log(response.data.images.original.gif_url);
@@ -46,7 +47,7 @@ app.get('/api/v1/gif/random', (req, res) => {
     .then((response) => {
       console.log('hit .then response');
       client.query(`
-      INSERT INTO questions(gif) VALUES($1)`, [response.data.images.original.gif_url]
+      INSERT INTO questions(gif, questions) VALUES($1, $2)`, [response.data.images.original.gif_url, req.query.questionText]
       );
       return response;
     })
