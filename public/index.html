@@ -23,6 +23,20 @@
     <!-- DO: -->
     <!-- add url link in content. Will be to our Heroku deployment -->
     <meta property="og:url" content="" />
+
+    <!-- Handlebar template for history view -->
+    <script type="text/x-handlebars-template" id="gif-history-template">
+      <div class="history-container">
+        <h3>{{}}</h3>
+        <div class="gif-history-info">
+          <p>{{}}</p>
+          <p>{{}}</p>
+        </div>
+        <img src={{}}>
+        <p>{{}}</p>
+        <button id="delete-btn" data-id={{}} class="admin">delete</button>
+      </div>
+    </script>
 </head>
 
 <body>
@@ -33,7 +47,7 @@
       <li>History</li>
       <li><a href="/about">About the Creators</a></li>
     </ul>
-  </nav>
+  </nav><br>
 
   <h1>Welcome!</h1>
 
@@ -62,7 +76,9 @@
         </form>
   </section>
 
-  <section class="history-View container"></section>
+  <section class="history-View container">
+    <div class="history"></div>
+  </section>
 
   <section class="login-View container">
     <form action="" id="login-form">
