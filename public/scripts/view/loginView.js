@@ -1,5 +1,6 @@
 'use strict';
 var app = app || {};
+// const __API_URL__ = 'http://localhost:3000';
 
 (function(module) {
   const loginView = {};
@@ -10,9 +11,18 @@ var app = app || {};
 
     $('#login-form').on('submit', (event) => {
       event.preventDefault();
+      // let userId = event.target.userName.value;
       localStorage.loggedIn = true;
-      let userId = event.target.userName.value;
-      page('/');
+      localStorage.username = event.target.userName.value;
+      let tagArray = app.Game.randomArray.toString();
+
+      let data = {
+        userId: event.target.userName.value,
+        tagArray: tagArray
+      };
+
+      $.post(`${__API_URL__}/addUser`, data)
+        .then(() => page('/'));
     });
   };
 
