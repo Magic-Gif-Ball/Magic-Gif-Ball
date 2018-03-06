@@ -10,7 +10,7 @@ Example:
 ### 'Should I finally ask Brian out on a date?'
 
 Magic Gif Ball: 
-![picture of woman waving arms no](https://media.giphy.com/media/l1J9OVgun9akcO5C8/ giphy.gif "No No No")
+![picture of woman waving arms no](https://media.giphy.com/media/l1J9OVgun9akcO5C8/giphy.gif "No No No")
 
 No login or username is required to use the site, but if users would like the have their questions and reponse gifs recorded there is login funcitonality in the top right of all pages. 
 
@@ -32,8 +32,12 @@ All items needed for use of this site are hosted on Heroku. Simply go to https:/
 
 
 ## Change Log
-
-
+03/05/2018 0900 - Discussed project ideas
+03/05/2018 0930 - Selected project idea and did pitched
+03/05/2018 1000 - Did wireframes and planning
+03/05/2018 1100 - Created necessary files
+03/05/2018 1200 - Scaffolded html, README, and server.js. Added gitignore, lintr, and normalize.
+03/05/2018 1400 - Different view containers made in html
 
 ## Credits and Collaborations
 https://developers.giphy.com/
