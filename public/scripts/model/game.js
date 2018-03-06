@@ -11,6 +11,7 @@ var __API_URL__ = 'http://localhost:3000';
     module.errorView.initErrorPage(err);
   }
 
+
   // Game.fetchGif = function(question) {
   //   $.get(`${__API_URL__}/api/v1/gif/random`, question)
   //     .then(result => {

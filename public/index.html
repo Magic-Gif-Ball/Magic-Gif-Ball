@@ -23,6 +23,34 @@
     <!-- DO: -->
     <!-- add url link in content. Will be to our Heroku deployment -->
     <meta property="og:url" content="" />
+
+    <!-- Handlebars template for history view -->
+    <script type="text/x-handlebars-template" id="gif-history-template">
+      <div class="history-container">
+        <h3>{{}}</h3>
+        <div class="gif-history-info">
+          <p>{{}}</p>
+          <p>{{}}</p>
+        </div>
+        <img src={{}}>
+        <p>{{}}</p>
+        <button id="delete-btn" data-id={{}} class="admin">delete</button>
+      </div>
+    </script>
+
+    <!-- Handlebars template for error view -->
+    <script type="text/x-handlebars-template" id="error-template">
+      <div class="error-container">
+        <h3>{{}}</h3>
+        <div class="error-info">
+          <p>{{}}</p>
+          <p>{{}}</p>
+        </div>
+        <img src={{}}>
+        <p>{{}}</p>
+      </div>
+    </script>
+
 </head>
 
 <body>
@@ -32,12 +60,16 @@
       <li><a href="/">Home</a></li>
       <li>History</li>
       <li><a href="/about">About the Creators</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/logout">Log Out</a></li>
     </ul>
-  </nav>
+  </nav><br>
 
   <h1>Welcome!</h1>
 
-  <section class="error-View container"></section>
+  <section class="error-View container">
+    <div class="error"></div>
+  </section>
 
   <section class="about-Us container">
   <h2>About the Creators:</h2>
@@ -62,12 +94,14 @@
         </form>
   </section>
 
-  <section class="history-View container"></section>
+  <section class="history-View container">
+    <div class="history"></div>
+  </section>
 
   <section class="login-View container">
     <form action="" id="login-form">
       <label>Enter a Username:
-          <input type="text" id="userName" placeholder="Username">
+          <input type="text" name="userName" placeholder="Username">
       </label>
       <button type="submit">Submit</button>
     </form>
