@@ -55,9 +55,10 @@
   <section class="game-View container">
       <form action="" id="question-form">
           <label>Enter a Question to the Magic Gif Ball!
-              <input type="text" id="questionToGifBall" placeholder="Is this a good question?">
+              <input type="text" name="questionToGifBall" placeholder="Is this a good question?">
           </label>
           <button type="submit">Ask!</button>
+          <img src="http://via.placeholder.com/350x150" alt="">
         </form>
   </section>
 
@@ -77,12 +78,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <!-- link js files -->
-  <script src="/public/scripts/model/game.js"></script>
-  <script src="/public/scripts/view/aboutView.js"></script>
-  <script src="/public/scripts/view/gameView.js"></script>
-  <script src="/public/scripts/view/historyView.js"></script>
-  <script src="/public/scripts/view/loginView.js"></script>
-
+  <script src="scripts/model/game.js"></script>
+  <script src="scripts/view/aboutView.js"></script>
+  <script src="scripts/view/gameView.js"></script>
+  <script src="scripts/view/historyView.js"></script>
+  <script src="scripts/view/loginView.js"></script>
+  <script>app.gameView.initGamePage();</script>
 </body>
 
 </html>
