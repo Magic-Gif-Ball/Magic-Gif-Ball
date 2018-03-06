@@ -11,14 +11,24 @@ var __API_URL__ = 'http://localhost:3000';
     module.errorView.initErrorPage(err);
   }
 
-  Game.fetchGif = function() {
+
+  // Game.fetchGif = function(question) {
+  //   $.get(`${__API_URL__}/api/v1/gif/random`, question)
+  //     .then(result => {
+  //       console.log(result);
+  //       $('#question-form img').attr('src', result);
+  //     });
+  // };
+
+
+  Game.fetchGif = function(questionText) {
     let index = Game.randomArrayIndex();
     let tag = randomArray[index];
     console.log(tag);
     // $.get(`${__API_URL__}/api/v1/gif/random`)
     $.ajax({
       url: `${__API_URL__}/api/v1/gif/random`,
-      data: {tag}
+      data: {tag, questionText}
     })
       .then(result => {
         console.log(result);
