@@ -34,7 +34,7 @@ app.get('/api/v1/gif/random', (req, res) => {
 });
 
 app.post('/addUser', bodyParser, (req, res) => {
-  let { username, tagArray } = req.body;
+  let {username, tagArray} = req.body;
   client.query(`INSERT INTO users(username, responses) VALUES ($1, $2);`, [username, tagArray])
     .then()
     .catch (console.err);
