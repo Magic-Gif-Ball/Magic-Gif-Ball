@@ -22,15 +22,40 @@ app.use(express.static('./public'));
 
 app.get('/', (req, res) => res.sendFile('index.html', {root:'./public'}));
 
+// // get route with no login to retrieve new gif
+// app.get('/api/v1/gif/random', (req, res) => {
+//   giphyClient.random('gifs', {"tag": 'yes'})
+//     .then((response) => {
+//     //put callback here
+//       console.log(response.data.images.original.gif_url);
+//       res.send(response.data.images.original.gif_url);
+//     })
+//     .catch(console.error);
+// });
+
+// get route with login
 app.get('/api/v1/gif/random', (req, res) => {
   giphyClient.random('gifs', {"tag": 'yes'})
-  .then((response) => {
+    .then((response) => {
     //put callback here
-    console.log(response.data.images.original.gif_url);
-    res.send(response.data.images.original.gif_url);
-  })
-  .catch(console.error);
+      console.log(response.data.images.original.gif_url);
+      res.send(response.data.images.original.gif_url);
+      return response;
+    })
+    .catch(console.error)
+    .then((response) => {
+      console.log('hit .then response');
+      client.query(`
+      INSERT INTO questions(gif) VALUES($1)`, [response.data.images.original.gif_url]
+      );
+      return response;
+    })
+    // .then(results => res.sendStatus(201))
+    .catch(console.error);
 });
+
+
+
 
 
 app.get('*', (req, res) => res.sendFile('index.html', {root:'./public'}));
