@@ -19,7 +19,6 @@ app.use(cors());
 
 app.use(express.static('./public'));
 
-
 app.get('/', (req, res) => res.sendFile('index.html', { root: './public' }));
 
 // // get route with no login to retrieve new gif
@@ -72,7 +71,6 @@ app.post('/addUser', bodyParser, (req, res) => {
     })
     .catch (console.err);
 });
-
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 

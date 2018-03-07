@@ -1,17 +1,16 @@
 'use strict';
 
 var app = app || {};
-// const __API_URL__ = 'http://localhost:3000';
-const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
+const __API_URL__ = 'http://localhost:3000';
+// const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
 
 (function(module) {
   // const Game = {};
-  //do we want an error view?
+
   function errorCallback(err) {
     console.error(err);
     module.errorView.initErrorPage(err);
   }
-
 
   // Game.fetchGif = function(question) {
   //   $.get(`${__API_URL__}/api/v1/gif/random`, question)
@@ -21,18 +20,15 @@ const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
   //     });
   // };
 
-
   Game.fetchGif = function(questionText) {
     let index = Game.randomArrayIndex();
     let tag = Game.randomArray[index];
-    console.log(tag);
     // $.get(`${__API_URL__}/api/v1/gif/random`)
     $.ajax({
       url: `${__API_URL__}/api/v1/gif/random`,
       data: {tag, questionText}
     })
       .then(result => {
-        console.log(result);
         $('#question-form img').attr('src', result);
       });
   };
@@ -42,8 +38,6 @@ const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
   Game.randomArrayIndex = () => {
     return Math.floor(Math.random() * (Game.randomArray.length - 1 - 0 + 1)) + 0;
   };
-
-
 
   //get gifs and questions from database
   function Game(rawGameObj) {
@@ -57,7 +51,7 @@ const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
 
   //array of objects that are question-gif pairs
   Game.all = [];
-  
+
   Game.loadAll = rows => Game.all = rows.sort((a, b) => b.id - a.id).map(game => new Game(game));
   Game.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/games`)
@@ -65,8 +59,7 @@ const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
       .then(callback)
       .catch(errorCallback);
 
-
   module.Game = Game;
-//module
+
 })(app);
 

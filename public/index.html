@@ -36,16 +36,10 @@
     <!-- Handlebars template for error view -->
     <script type="text/x-handlebars-template" id="error-template">
       <div class="error-container">
-        <h3>{{}}</h3>
-        <div class="error-info">
-          <p>{{}}</p>
-          <p>{{}}</p>
-        </div>
-        <img src={{}}>
-        <p>{{}}</p>
+        <h3>Error</h3>
+          <p>{{status}}: {{statusText}}</p>
       </div>
     </script>
-
 </head>
 
 <body>
@@ -58,17 +52,14 @@
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Log Out</a></li>
     </ul>
-  </nav><br>
+  </nav>
 
   <h1>Welcome!</h1>
 
-  <section class="error-View container">
-    <div class="error"></div>
-  </section>
+  <section class="error-View container"></section>
 
   <section class="about-Us container">
   <h2>About the Creators:</h2>
-
   <h3>Beverly</h3>
   <p>Why she's awesome</p>
   <h3>Patricia</h3>
@@ -82,7 +73,7 @@
   <section class="game-View container">
       <form action="" id="question-form">
           <label>Enter a Question to the Magic Gif Ball!
-              <input type="text" name="questionToGifBall" placeholder="Is this a good question?">
+              <input type="text" name="questionToGifBall" placeholder="Enter a Yes/No Question">
           </label>
           <button type="submit">Ask!</button>
           <img src="http://via.placeholder.com/350x150" alt="">
