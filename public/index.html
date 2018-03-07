@@ -42,18 +42,18 @@
   </script>
 
   <!-- Handlebars template for update view -->
-  <script type="text/x-handlebars-template" id="update-template"></script>
-    <form id="updateTag-form">
+  <script type="text/x-handlebars-template" id="update-template">
+    <form id="updateTag-form" data-userId={{user_id}}>
       <h3>Customize Your Tags</h3>
-      <input type="text" name="one" value="{{tag[]}}">
-      <input type="text" name="two" value="{{tag[]}}">
-      <input type="text" name="three" value="{{tag[]}}">
-      <input type="text" name="four" value="{{tag[]}}">
-      <input type="text" name="five" value="{{tag[]}}">
-      <input type="text" name="six" value="{{tag[]}}">
-      <input type="text" name="seven" value="{{tag[]}}">
-      <input type="text" name="eight" value="{{tag[]}}">
-      <button type="submit" data-id={{user_id}}>Update Tags</button>
+      <input type="text" name="one" value="{{tagArray.[0]}}">
+      <input type="text" name="two" value="{{tagArray.[1]}}">
+      <input type="text" name="three" value="{{tagArray.[2]}}">
+      <input type="text" name="four" value="{{tagArray.[3]}}">
+      <input type="text" name="five" value="{{tagArray.[4]}}">
+      <input type="text" name="six" value="{{tagArray.[5]}}">
+      <input type="text" name="seven" value="{{tagArray.[6]}}">
+      <input type="text" name="eight" value="{{tagArray.[7]}}"> 
+      <button type="submit">Update Tags</button>
       <button type="submit">Reset to Default</button>
     </form>
   </script>
@@ -65,6 +65,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/history">History</a></li>
+      <li><a href="/update">Customize Tags</a></li>
       <li><a href="/about">About the Creators</a></li>
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Log Out</a></li>
@@ -113,7 +114,6 @@
   </section>
 
   <section class="update-View container"></section>
-
   
   <!-- jQuery, Handlebars, and page.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -124,6 +124,7 @@
   <script src="scripts/view/aboutView.js"></script>
   <script src="scripts/view/gameView.js"></script>
   <script src="scripts/view/historyView.js"></script>
+  <script src="scripts/view/updateView.js"></script>
   <script src="scripts/view/loginView.js"></script>
   <script src="scripts/controller/routes.js"></script>
 </body>
