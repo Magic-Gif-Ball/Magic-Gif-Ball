@@ -33,11 +33,21 @@ All items needed for use of this site are hosted on Heroku. Simply go to https:/
 
 ## Change Log
 03/05/2018 0900 - Discussed project ideas
+
 03/05/2018 0930 - Selected project idea and did pitched
+
 03/05/2018 1000 - Did wireframes and planning
+
 03/05/2018 1100 - Created necessary files
+
 03/05/2018 1200 - Scaffolded html, README, and server.js. Added gitignore, lintr, and normalize.
+
 03/05/2018 1400 - Different view containers made in html
+
+03/05/2018 1600 - wrote GET route, 'yes' gif appears on home page
+
+03/06/2018 0900 - discuss database layout
+
 
 ## Credits and Collaborations
 https://developers.giphy.com/

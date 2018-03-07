@@ -12,10 +12,8 @@ var app = app || {};
     $('#question-form').on('submit', (event) => {
       event.preventDefault();
       //save question input
-      let question = {
-        question: event.target.questionToGifBall.value
-      };
-      module.Game.fetchGif();
+      let question = event.target.questionToGifBall.value;
+      module.Game.fetchGif(question);
     });
 
     //other stuff
