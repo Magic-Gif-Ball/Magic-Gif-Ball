@@ -2,7 +2,7 @@
 
 var app = app || {};
 // const __API_URL__ = 'http://localhost:3000';
-const __API_URL__ = 'https:magic-gif-ball.herokuapp.com/';
+const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
 
 (function(module) {
   // const Game = {};
