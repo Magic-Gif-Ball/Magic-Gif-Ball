@@ -40,6 +40,23 @@
         <p>{{status}}: {{statusText}}</p>
     </div>
   </script>
+
+  <!-- Handlebars template for update view -->
+  <script type="text/x-handlebars-template" id="update-template"></script>
+    <form id="updateTag-form">
+      <h3>Customize Your Tags</h3>
+      <input type="text" name="one" value="{{tag[]}}">
+      <input type="text" name="two" value="{{tag[]}}">
+      <input type="text" name="three" value="{{tag[]}}">
+      <input type="text" name="four" value="{{tag[]}}">
+      <input type="text" name="five" value="{{tag[]}}">
+      <input type="text" name="six" value="{{tag[]}}">
+      <input type="text" name="seven" value="{{tag[]}}">
+      <input type="text" name="eight" value="{{tag[]}}">
+      <button type="submit" data-id={{user_id}}>Update Tags</button>
+      <button type="submit">Reset to Default</button>
+    </form>
+  </script>
 </head>
 
 <body>
@@ -94,6 +111,9 @@
       <button type="submit">Submit</button>
     </form>
   </section>
+
+  <section class="update-View container"></section>
+
   
   <!-- jQuery, Handlebars, and page.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
