@@ -32,6 +32,7 @@ app.get('/', (req, res) => res.sendFile('index.html', { root: './public' }));
 //     .catch(console.error);
 // });
 
+
 // get route with login
 app.get('/api/v1/gif/random', (req, res) => {
   giphyClient.random('gifs', {"tag": `${req.query.tag}`})
@@ -92,8 +93,17 @@ app.post('/addUser', bodyParser, (req, res) => {
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 
+//loadDB();
+
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // env variables for testing locally
 // export PORT=3000
 // export DATABASE_URL=postgres://localhost:5432/magic_gif_ball
+
+//lab 9
+//create function loadDB
+//client.query
+//client.query
+//no .then
+//have a .catch to console.log errors
