@@ -11,8 +11,19 @@ var app = app || {};
     $('#login-form').on('submit', (event) => {
       event.preventDefault();
       localStorage.loggedIn = true;
-      let userId = event.target.userName.value;
-      page('/');
+      localStorage.username = event.target.userName.value;
+      let tagArray = app.Game.randomArray.toString();
+      let data = {
+        username: event.target.userName.value,
+        tagArray: tagArray
+      };
+      $.post(`${__API_URL__}/addUser`, data)
+        .then((response) => {
+          app.Game.randomArray = response.split(',');
+        })
+        .catch(console.err)
+        .then(() => page('/'))
+        .catch(console.err);
     });
   };
 
