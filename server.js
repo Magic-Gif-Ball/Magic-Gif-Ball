@@ -59,6 +59,24 @@ app.get('/api/v1/games', (req, res) => {
     .catch(console.error);
 });
 
+// display user specific history
+//
+// maybe need a second route?
+//yes
+//
+//Drop one table and rebuild
+//rename id, make it unique
+app.get('/api/v1/userHistory/:username', (req, res) => {
+  console.log(req.params.username);
+  client.query(`SELECT id, questions, gif, userid FROM questions INNER JOIN users ON questions.userid=users.id WHERE username=${req.params.username};`)
+
+    .then(results => res.send(results.rows))
+    // .then(results => console.log(results.rows))
+    .catch(console.error);
+});
+
+
+
 app.post('/addUser', bodyParser, (req, res) => {
   let {username, tagArray} = req.body;
   client.query(`INSERT INTO users(username, responses) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])

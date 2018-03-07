@@ -53,10 +53,20 @@ const __API_URL__ = 'http://localhost:3000';
   //array of objects that are question-gif pairs
   Game.all = [];
 
+  //tell server.js what the currently logged in username is
+  //get request at whatever/history
+  //must pass the username
+
   Game.loadAll = rows => Game.all = rows.sort((a, b) => b.id - a.id).map(game => new Game(game));
   Game.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/games`)
       .then(Game.loadAll)
+      .then(callback)
+      .catch(errorCallback);
+
+  // write a fetchOne (fetchUser) here for history username
+  Game.fetchUser = (ctx, callback) =>
+    $.get(`${__API_URL__}/api/v1/userHistory/${ctx.params.username}`)
       .then(callback)
       .catch(errorCallback);
 
