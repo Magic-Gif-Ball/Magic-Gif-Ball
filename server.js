@@ -65,12 +65,19 @@ app.post('/addUser', bodyParser, (req, res) => {
     .then((result) => {
       if (result.rowCount === 0) {
         client.query(`SELECT users.id, users.responses FROM users WHERE username='${username}';`)
-          // .then((resultArray) => console.log(resultArray.rows[0]))
           .then((resultArray) => res.send(resultArray.rows[0]))
-          .catch (console.err);
+          .catch(console.err);
       }
     })
-    .catch (console.err);
+    .catch(console.err);
+});
+
+app.put('/api/v1/gif/update', bodyParser, (req, res) => {
+  // console.log(req.body);
+  let {user_id, tagArray} = req.body;
+  client.query(`UPDATE users SET responses=$1 WHERE id=$2;`, [tagArray, user_id])
+    .then()
+    .catch(console.err);
 });
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
