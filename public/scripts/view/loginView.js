@@ -22,8 +22,9 @@ var app = app || {};
       };
       $.post(`${__API_URL__}/addUser`, data)
         .then((response) => {
-          let customArray = response.split(',');
+          let customArray = response.responses.split(',');
           localStorage.tagArray = customArray;
+          localStorage.userId = response.id;
         })
         .catch(console.err)
         .then(() => page('/'))

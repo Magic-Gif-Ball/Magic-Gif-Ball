@@ -64,8 +64,9 @@ app.post('/addUser', bodyParser, (req, res) => {
   client.query(`INSERT INTO users(username, responses) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
     .then((result) => {
       if (result.rowCount === 0) {
-        client.query(`SELECT users.responses FROM users WHERE username='${username}';`)
-          .then((resultArray) => res.send(resultArray.rows[0].responses))
+        client.query(`SELECT users.id, users.responses FROM users WHERE username='${username}';`)
+          // .then((resultArray) => console.log(resultArray.rows[0]))
+          .then((resultArray) => res.send(resultArray.rows[0]))
           .catch (console.err);
       }
     })
