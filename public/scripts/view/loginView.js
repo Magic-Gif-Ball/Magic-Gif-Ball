@@ -17,8 +17,11 @@ var app = app || {};
         username: event.target.userName.value,
         tagArray: tagArray
       };
-
       $.post(`${__API_URL__}/addUser`, data)
+        .then((response) => {
+          app.Game.randomArray = response.split(',');
+        })
+        .catch(console.err)
         .then(() => page('/'))
         .catch(console.err);
     });

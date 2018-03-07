@@ -23,7 +23,6 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.sendFile('index.html', { root: './public' }));
 
 app.get('/api/v1/gif/random', (req, res) => {
-  console.log(req.query);
   giphyClient.random('gifs', { "tag": `${req.query.tag}` })
     .then((response) => {
       res.send(response.data.images.original.gif_url);
@@ -34,10 +33,16 @@ app.get('/api/v1/gif/random', (req, res) => {
 app.post('/addUser', bodyParser, (req, res) => {
   let {username, tagArray} = req.body;
   client.query(`INSERT INTO users(username, responses) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
-    .then(res.sendStatus(200))
+    .then((result) => {
+      if (result.rowCount === 0) {
+        client.query(`SELECT users.responses FROM users WHERE username='${username}';`)
+          .then((resultArray) => res.send(resultArray.rows[0].responses))
+          .catch (console.err);
+      }
+    })
     .catch (console.err);
 });
 
-app.get('*', (req, res) => res.sendFile('index.html', { root: './public' }));
+app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
