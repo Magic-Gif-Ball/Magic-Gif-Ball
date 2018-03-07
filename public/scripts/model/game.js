@@ -4,7 +4,7 @@ var app = app || {};
 var __API_URL__ = 'http://localhost:3000';
 
 (function(module) {
-  const Game = {};
+  // const Game = {};
   //do we want an error view?
   function errorCallback(err) {
     console.error(err);
@@ -41,6 +41,28 @@ var __API_URL__ = 'http://localhost:3000';
   Game.randomArrayIndex = () => {
     return Math.floor(Math.random() * (randomArray.length - 1 - 0 + 1)) + 0;
   };
+
+
+
+  //get gifs and questions from database
+  function Game(rawGameObj) {
+    Object.keys(rawGameObj).forEach(key => this[key] = rawGameObj[key]);
+  }
+
+  Game.prototype.toHtml = function() {
+    let template = Handlebars.compile($('#gif-history-template').text());
+    return template(this);
+  };
+
+  //array of objects that are question-gif pairs
+  Game.all = [];
+  
+  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.id - a.id).map(game => new Game(game));
+  Game.fetchAll = callback =>
+    $.get(`${__API_URL__}/api/v1/games`)
+      .then(Game.loadAll)
+      .then(callback)
+      .catch(errorCallback);
 
 
   module.Game = Game;

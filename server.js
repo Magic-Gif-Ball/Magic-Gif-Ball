@@ -35,7 +35,7 @@ app.get('/', (req, res) => res.sendFile('index.html', {root:'./public'}));
 
 // get route with login
 app.get('/api/v1/gif/random', (req, res) => {
-  console.log('req body:', req.query.questionText);
+  console.log('req query:', req.query.questionText);
   giphyClient.random('gifs', {"tag": `${req.query.tag}`})
     .then((response) => {
     //put callback here
@@ -52,6 +52,15 @@ app.get('/api/v1/gif/random', (req, res) => {
       return response;
     })
     // .then(results => res.sendStatus(201))
+    .catch(console.error);
+});
+
+
+//history
+app.get('/api/v1/games', (req, res) => {
+  client.query(`SELECT id, questions, gif, userId, location FROM questions;`)
+    .then(results => res.send(results.rows))
+    // .then(results => console.log(results.rows))
     .catch(console.error);
 });
 
