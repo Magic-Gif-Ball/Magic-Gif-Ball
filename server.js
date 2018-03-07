@@ -54,7 +54,7 @@ app.get('/api/v1/gif/random', (req, res) => {
 
 //history
 app.get('/api/v1/games', (req, res) => {
-  client.query(`SELECT id, questions, gif, userId, location FROM questions;`)
+  client.query(`SELECT questions_id, questions, gif, userid, location FROM questions;`)
     .then(results => res.send(results.rows))
     // .then(results => console.log(results.rows))
     .catch(console.error);
@@ -69,7 +69,7 @@ app.get('/api/v1/games', (req, res) => {
 //rename id, make it unique
 app.get('/api/v1/userHistory/:username', (req, res) => {
   console.log(req.params.username);
-  client.query(`SELECT id, questions, gif, userid FROM questions INNER JOIN users ON questions.userid=users.id WHERE username=${req.params.username};`)
+  client.query(`SELECT questions_id, questions, gif, userid FROM questions INNER JOIN users ON questions.userid=users.users_id WHERE username=${req.params.username};`)
 
     .then(results => res.send(results.rows))
     // .then(results => console.log(results.rows))
@@ -80,11 +80,11 @@ app.get('/api/v1/userHistory/:username', (req, res) => {
 
 app.post('/addUser', bodyParser, (req, res) => {
   let {username, tagArray} = req.body;
-  client.query(`INSERT INTO users(username, responses) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
+  client.query(`INSERT INTO users(username, tag_array) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
     .then((result) => {
       if (result.rowCount === 0) {
-        client.query(`SELECT users.responses FROM users WHERE username='${username}';`)
-          .then((resultArray) => res.send(resultArray.rows[0].responses))
+        client.query(`SELECT users.tag_array FROM users WHERE username='${username}';`)
+          .then((resultArray) => res.send(resultArray.rows[0].tag_array))
           .catch (console.err);
       }
     })
@@ -93,7 +93,7 @@ app.post('/addUser', bodyParser, (req, res) => {
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 
-//loadDB();
+loadDB();
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
@@ -107,3 +107,29 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 //client.query
 //no .then
 //have a .catch to console.log errors
+
+function loadDB() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    users (
+      users_id SERIAL PRIMARY KEY,
+      username VARCHAR(50) UNIQUE NOT NULL,
+      date DATE,
+      tag_array TEXT
+    );`
+  )
+    .catch(console.error);
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    questions (
+      questions_id SERIAL PRIMARY KEY,
+      questions TEXT,
+      gif VARCHAR (250),
+      userid INTEGER NOT NULL REFERENCES users(users_id),
+      location VARCHAR(250)
+    );`
+  )
+    .catch(console.error);
+
+}

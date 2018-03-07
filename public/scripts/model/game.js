@@ -57,7 +57,8 @@ const __API_URL__ = 'http://localhost:3000';
   //get request at whatever/history
   //must pass the username
 
-  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.id - a.id).map(game => new Game(game));
+  //-------------------figure out which ID it is referencing
+  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.questions_id - a.questions_id).map(game => new Game(game));
   Game.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/games`)
       .then(Game.loadAll)
