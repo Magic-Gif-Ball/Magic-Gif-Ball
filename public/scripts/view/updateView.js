@@ -22,6 +22,16 @@ var app = app || {};
       localStorage.tagArray = userInfo.tagArray;
       module.Game.updateTags(userInfo);
     });
+
+    $('#updateTag-form').on('click', () => {
+      userInfo.tagArray = app.Game.randomArray;
+      localStorage.tagArray = app.Game.randomArray;
+      $('.update-View').empty();
+      let template = Handlebars.compile($('#update-template').text());
+      $('.update-View').append(template(userInfo));
+      userInfo.tagArray = userInfo.tagArray.toString();
+      module.Game.updateTags(userInfo);
+    });
   };
 
 
