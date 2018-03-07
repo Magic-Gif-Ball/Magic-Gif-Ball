@@ -22,18 +22,19 @@ const __API_URL__ = 'http://localhost:3000';
 
   Game.fetchGif = function(questionText) {
     let index = Game.randomArrayIndex();
-    let tag = Game.randomArray[index];
-    // $.get(`${__API_URL__}/api/v1/gif/random`)
+    let array = localStorage.tagArray.split(',');
+    let tag = array[index];
     $.ajax({
       url: `${__API_URL__}/api/v1/gif/random`,
       data: {tag, questionText}
     })
       .then(result => {
         $('#question-form img').attr('src', result);
+        $('#question-form p').text(tag);
       });
   };
 
-  Game.randomArray = ['yes', 'no', 'maybe', 'try again', 'outlook unclear', 'hell no', 'hell yes'];
+  Game.randomArray = ['perfect', 'no no no', 'either way', 'dumb', 'who knows', 'no way', 'hell yes', 'i dont care'];
 
   Game.randomArrayIndex = () => {
     return Math.floor(Math.random() * (Game.randomArray.length - 1 - 0 + 1)) + 0;

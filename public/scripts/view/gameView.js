@@ -9,6 +9,7 @@ var app = app || {};
   gameView.initGamePage = function(ctx, next) {
     $('.container').hide();
     $('.game-View').show();
+    localStorage.tagArray = app.Game.randomArray;
     $('#question-form').on('submit', (event) => {
       event.preventDefault();
       //save question input
