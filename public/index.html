@@ -10,42 +10,36 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
 
-  <title>Fun with Gifs!</title>
+  <title>Magic Gif Ball</title>
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Gif Magic Eight Ball" />
-    <meta property="og:type" content="website" />
-    <meta name="description" content="A fun and user-friendly game for all ages!!" />
-    <meta property=”og:description” content="A fun and user-friendly game for all ages!!" />
-    <!-- DO: -->
-    <!-- add preview image link eventually in content -->
-    <meta property="og:image" content="" />
-    <meta property="og:locale" content="en_US" />
-    <!-- DO: -->
-    <!-- add url link in content. Will be to our Heroku deployment -->
-    <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta name="description" content="A fun and user-friendly game for all ages!!" />
+  <meta property=”og:description” content="A fun and user-friendly game for all ages!!" />
+  <!-- DO: -->
+  <!-- add preview image link eventually in content -->
+  <meta property="og:image" content="" />
+  <meta property="og:locale" content="en_US" />
+  <!-- DO: -->
+  <!-- add url link in content. Will be to our Heroku deployment -->
+  <meta property="og:url" content="" />
 
-    <!-- Handlebars template for history view -->
-    <script type="text/x-handlebars-template" id="gif-history-template">
-      <div class="history-container">
-        <h3>{{questions}}</h3>
-        <img src="{{gif}}">
-        <button id="delete-btn" data-id="{{id}}" class="">delete</button>
-      </div>
-    </script>
+  <!-- Handlebars template for history view -->
+  <script type="text/x-handlebars-template" id="gif-history-template">
+    <div class="history-container">
+      <h3>{{questions}}</h3>
+      <img src="{{gif}}">
+      <button id="delete-btn" data-id="{{id}}" class="">delete</button>
+    </div>
+  </script>
 
-    <!-- Handlebars template for error view -->
-    <script type="text/x-handlebars-template" id="error-template">
-      <div class="error-container">
-        <h3>{{}}</h3>
-        <div class="error-info">
-          <p>{{}}</p>
-          <p>{{}}</p>
-        </div>
-        <img src={{}}>
-        <p>{{}}</p>
-      </div>
-    </script>
-
+  <!-- Handlebars template for error view -->
+  <script type="text/x-handlebars-template" id="error-template">
+    <div class="error-container">
+      <h3>Error</h3>
+        <p>{{status}}: {{statusText}}</p>
+    </div>
+  </script>
 </head>
 
 <body>
@@ -58,17 +52,14 @@
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Log Out</a></li>
     </ul>
-  </nav><br>
+  </nav>
 
-  <h1>Welcome!</h1>
+  <h1>Welcome<span id="loginName"></span>!</h1>
 
-  <section class="error-View container">
-    <div class="error"></div>
-  </section>
+  <section class="error-View container"></section>
 
   <section class="about-Us container">
   <h2>About the Creators:</h2>
-
   <h3>Beverly</h3>
   <p>Why she's awesome</p>
   <h3>Patricia</h3>
@@ -80,13 +71,14 @@
   </section>
 
   <section class="game-View container">
-      <form action="" id="question-form">
-          <label>Enter a Question to the Magic Gif Ball!
-              <input type="text" name="questionToGifBall" placeholder="Is this a good question?">
-          </label>
-          <button type="submit">Ask!</button>
-          <img src="http://via.placeholder.com/350x150" alt="">
-        </form>
+    <form action="" id="question-form">
+        <label>Enter a Question to the Magic Gif Ball!
+            <input type="text" name="questionToGifBall" placeholder="Enter a Yes/No Question">
+        </label>
+        <button type="submit">Ask!</button>
+        <img src="http://via.placeholder.com/350x150" alt="">
+        <p></p>
+      </form>
   </section>
 
   <section class="history-View container">

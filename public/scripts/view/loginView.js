@@ -11,15 +11,19 @@ var app = app || {};
     $('#login-form').on('submit', (event) => {
       event.preventDefault();
       localStorage.loggedIn = true;
-      localStorage.username = event.target.userName.value;
+      let loginName = event.target.userName.value;
+      localStorage.username = loginName;
+      localStorage.tagArray = app.Game.randomArray;
+      $('#loginName').text(` ${loginName}`);
       let tagArray = app.Game.randomArray.toString();
       let data = {
-        username: event.target.userName.value,
+        username: loginName,
         tagArray: tagArray
       };
       $.post(`${__API_URL__}/addUser`, data)
         .then((response) => {
-          app.Game.randomArray = response.split(',');
+          let customArray = response.split(',');
+          localStorage.tagArray = customArray;
         })
         .catch(console.err)
         .then(() => page('/'))
@@ -29,6 +33,7 @@ var app = app || {};
 
   loginView.initLogout = function() {
     localStorage.clear();
+    $('#loginName').empty();
     page('/');
   };
 
