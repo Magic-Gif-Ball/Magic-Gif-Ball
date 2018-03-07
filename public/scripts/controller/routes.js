@@ -8,4 +8,10 @@ page('/login', app.loginView.initLoginPage);
 
 page('/logout', app.loginView.initLogout);
 
+// page('/history', app.historyView.initHistoryPage);
+
+page('/history'
+  , (ctx, next) => app.Game.fetchAll(() => app.historyView.initHistoryPage(ctx, next))
+);
+
 page();

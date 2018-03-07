@@ -27,14 +27,9 @@
     <!-- Handlebars template for history view -->
     <script type="text/x-handlebars-template" id="gif-history-template">
       <div class="history-container">
-        <h3>{{}}</h3>
-        <div class="gif-history-info">
-          <p>{{}}</p>
-          <p>{{}}</p>
-        </div>
-        <img src={{}}>
-        <p>{{}}</p>
-        <button id="delete-btn" data-id={{}} class="admin">delete</button>
+        <h3>{{questions}}</h3>
+        <img src="{{gif}}">
+        <button id="delete-btn" data-id="{{id}}" class="">delete</button>
       </div>
     </script>
 
@@ -58,7 +53,7 @@
   <nav id="menu">
     <ul>
       <li><a href="/">Home</a></li>
-      <li>History</li>
+      <li><a href="/history">History</a></li>
       <li><a href="/about">About the Creators</a></li>
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Log Out</a></li>
@@ -95,6 +90,7 @@
   </section>
 
   <section class="history-View container">
+    <h2>Gifstory</h2>
     <div class="history"></div>
   </section>
 
