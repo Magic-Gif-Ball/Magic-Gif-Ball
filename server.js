@@ -76,7 +76,7 @@ app.put('/api/v1/gif/update', bodyParser, (req, res) => {
   // console.log(req.body);
   let {user_id, tagArray} = req.body;
   client.query(`UPDATE users SET responses=$1 WHERE id=$2;`, [tagArray, user_id])
-    .then()
+    .then(res.sendStatus(201))
     .catch(console.err);
 });
 

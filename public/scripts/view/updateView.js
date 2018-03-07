@@ -16,14 +16,14 @@ var app = app || {};
     let template = Handlebars.compile($('#update-template').text());
     $('.update-View').append(template(userInfo));
 
-    $('#updateTag-form').on('submit', (event) => {
+    $('#updateTag-form').on('submit', function(event) {
       event.preventDefault();
       userInfo.tagArray = [event.target.one.value, event.target.two.value, event.target.three.value, event.target.four.value,event.target.five.value,event.target.six.value,event.target.seven.value,event.target.eight.value].toString();
       localStorage.tagArray = userInfo.tagArray;
       module.Game.updateTags(userInfo);
     });
-
-    $('#updateTag-form').on('click', () => {
+      
+    $('#reset-button').on('click', () => {
       userInfo.tagArray = app.Game.randomArray;
       localStorage.tagArray = app.Game.randomArray;
       $('.update-View').empty();
@@ -34,7 +34,6 @@ var app = app || {};
     });
   };
 
-
-
   module.updateView = updateView;
+
 })(app);
