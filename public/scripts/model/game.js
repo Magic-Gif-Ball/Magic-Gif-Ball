@@ -24,6 +24,7 @@ const __API_URL__ = 'http://localhost:3000';
     let index = Game.randomArrayIndex();
     let array = localStorage.tagArray.split(',');
     let tag = array[index];
+    // let userid;
     $.ajax({
       url: `${__API_URL__}/api/v1/gif/random`,
       data: {tag, questionText}
@@ -53,11 +54,7 @@ const __API_URL__ = 'http://localhost:3000';
   //array of objects that are question-gif pairs
   Game.all = [];
 
-  //tell server.js what the currently logged in username is
-  //get request at whatever/history
-  //must pass the username
 
-  //-------------------figure out which ID it is referencing
   Game.loadAll = rows => Game.all = rows.sort((a, b) => b.questions_id - a.questions_id).map(game => new Game(game));
   Game.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/games`)
@@ -65,7 +62,7 @@ const __API_URL__ = 'http://localhost:3000';
       .then(callback)
       .catch(errorCallback);
 
-  // write a fetchOne (fetchUser) here for history username
+  //DONE fetchOne (fetchUser) here for history username
   Game.fetchUser = (ctx, callback) =>
     $.get(`${__API_URL__}/api/v1/userHistory/${ctx.params.username}`)
       .then(callback)

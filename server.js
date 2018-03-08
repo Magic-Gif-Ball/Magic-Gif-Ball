@@ -32,10 +32,22 @@ app.get('/', (req, res) => res.sendFile('index.html', { root: './public' }));
 //     .catch(console.error);
 // });
 
+//get id from other table (corresponds to userid), so that the table knows what to do
+//possibly have to do query 1 query 2 stuff
+
+// Getting user_id from users table that will be passed into question table specifically userid colunm.
+
+// function queryOne() {
+//   client.query(`SELECT users_id FROM users WHERE hfjkdfhs`);
+//   console.log(req)
+//     .then(results => res.send(results.rows))
+//     // .then(results => console.log(results.rows))
+//     .catch(console.error);
+// }
 
 // get route with login
 app.get('/api/v1/gif/random', (req, res) => {
-  giphyClient.random('gifs', {"tag": `${req.query.tag}`})
+  giphyClient.random('gifs', { "tag": `${req.query.tag}` })
     .then((response) => {
       res.send(response.data.images.original.gif_url);
       return response;
@@ -70,7 +82,6 @@ app.get('/api/v1/games', (req, res) => {
 app.get('/api/v1/userHistory/:username', (req, res) => {
   console.log(req.params.username);
   client.query(`SELECT questions_id, questions, gif, userid FROM questions INNER JOIN users ON questions.userid=users.users_id WHERE username=${req.params.username};`)
-
     .then(results => res.send(results.rows))
     // .then(results => console.log(results.rows))
     .catch(console.error);
@@ -79,19 +90,19 @@ app.get('/api/v1/userHistory/:username', (req, res) => {
 
 
 app.post('/addUser', bodyParser, (req, res) => {
-  let {username, tagArray} = req.body;
+  let { username, tagArray } = req.body;
   client.query(`INSERT INTO users(username, tag_array) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
     .then((result) => {
       if (result.rowCount === 0) {
         client.query(`SELECT users.tag_array FROM users WHERE username='${username}';`)
           .then((resultArray) => res.send(resultArray.rows[0].tag_array))
-          .catch (console.err);
+          .catch(console.err);
       }
     })
-    .catch (console.err);
+    .catch(console.err);
 });
 
-app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
+app.get('*', (req, res) => res.sendFile('index.html', { root: './public' }));
 
 loadDB();
 

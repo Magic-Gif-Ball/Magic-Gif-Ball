@@ -22,7 +22,6 @@ var app = app || {};
       //
       let currentUserName = localStorage.username;
 
-
       $.ajax({
         url: `${__API_URL__}/api/v1/userHistory/${currentUserName}`,
         //render to page
