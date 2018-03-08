@@ -175,12 +175,12 @@ main .update-View form input{
   padding: 10px;
 }
 
+
 /* footer */
 
 footer {
   text-align: center;
 }
-
 
 @media only screen and (min-width: 800px) {
   /* header {
