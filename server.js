@@ -53,7 +53,10 @@ app.get('/api/v1/gif/random', (req, res) => {
 
 //history
 app.get('/api/v1/games', (req, res) => {
-  client.query(`SELECT * FROM questions;`)
+  // console.log(req.query.user1);
+  client.query(`SELECT * FROM questions
+  WHERE userid=${req.query.user1}
+  ;`)
     .then(results => res.send(results.rows))
     // .then(results => console.log(results.rows))
     .catch(console.error);

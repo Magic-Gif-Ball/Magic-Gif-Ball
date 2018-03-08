@@ -57,13 +57,20 @@ const __API_URL__ = 'http://localhost:3000';
   //array of objects that are question-gif pairs
   Game.all = [];
 
-  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.questions_id - a.questions_id).map(game => new Game(game));
+  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.questions_id - a.questions_id)
+    .map(game => new Game(game));
 
-  Game.fetchAll = callback =>
-    $.get(`${__API_URL__}/api/v1/games`)
+  Game.fetchAll = callback => {
+    // $.get(`${__API_URL__}/api/v1/games`)
+    let user1 = localStorage.userId;
+    $.ajax({
+      url: `${__API_URL__}/api/v1/games`,
+      data: {user1}
+    })
       .then(Game.loadAll)
       .then(callback)
       .catch(errorCallback);
+  };
 
   Game.updateTags = (updateObject) => {
     $.ajax({
