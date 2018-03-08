@@ -4,6 +4,13 @@
 header {
   padding: 10px;
   border-bottom: 1px solid white;
+  position: relative;
+}
+
+header img {
+  position: absolute;
+  top: 4px;
+  right: 10px;
 }
 
 /* global styles */
