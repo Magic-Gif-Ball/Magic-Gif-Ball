@@ -30,8 +30,12 @@ All items needed for use of this site are hosted on Heroku. Simply go to https:/
 
 ## Architecture
 
+This is a website that will display gifs from an external API to the view. The user's history is stored in a SQL database and fetched and changed as needed. It utilizes Markdown, CSS, HTML, Handlebars, jQuery, javascript, and the GIPHY API. It utilizes Heroku to deploy the application.
 
 ## Change Log
+
+##### Day 1
+
 03/05/2018 0900 - Discussed project ideas
 
 03/05/2018 0930 - Selected project idea and did pitched
@@ -46,9 +50,76 @@ All items needed for use of this site are hosted on Heroku. Simply go to https:/
 
 03/05/2018 1600 - wrote GET route, 'yes' gif appears on home page
 
+##### Day 2
+
 03/06/2018 0900 - discuss database layout
+
+03/06/2018 1000 - added page.js routes
+
+03/06/2018 1100 - basic CSS for nav, handlebars added in html
+
+03/06/2018 1200 - login and logout views added in html. Username goes to localStorage and cleared when logged out.
+
+03/06/2018 1300 - array of gif tags made
+
+03/06/2018 1400 - added post funcitonality for the gifs viewed by the user. The question and gif url are successfully sent to the SQL database.
+
+03/06/2018 1500 - login now sends user information to the server, not just localStorage.
+
+03/06/2018 1600 - empty history container before appending
+
+03/06/2018 1700 - About page outlined with names and filler description
+
+03/06/2018 1800 - fixed API URL and filepaths
+
+##### Day 3
+
+03/07/2018 0900 - started writing code for user-specific history
+
+03/07/2018 1000 - basic CSS styling started, added 8 ball image
+
+03/07/2018 1100 - incorporate login and array together
+
+03/07/2018 1200 - finish error view
+
+03/07/2018 1300 - added update form
+
+03/07/2018 1400 - redid SQL database, renamed columns for both questions table and users table
+
+03/07/2018 1500 - search through code and renamed everwere the old column names were referenced
+
+03/07/2018 1600 - tags are now customizable per user by UPDATE
+
+03/07/2018 1700 - fix typos and bugs and lots of testing
+
+03/07/2018 1800 - CSS done for mobile-first view
+
+03/07/2018 1900 - tables are receiving and sending the appropriate data!
+
+03/07/2018 2000 - user-specific history diplaying
+
+##### Day 4
+
+03/08/2018 0900 - worked on CSS
+
+03/08/2018 1000 - DELETE an entry in the user specific history works
+
+03/07/2018 1030 - hamburger menu added, shows menu upon hover
+
+03/08/2018 1100 - fixed DELETE bug
+
+##### Day 5
 
 
 ## Credits and Collaborations
 https://developers.giphy.com/
 
+https://developers.giphy.com/
+
+https://sqlbolt.com/lesson/select_queries_review
+
+https://api.jquery.com
+
+https://leonard.io/blog/2012/11/handlebars-array-access/
+
+https://css-tricks.com/centering-css-complete-guide/
