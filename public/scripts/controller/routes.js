@@ -8,6 +8,8 @@ page('/login', app.loginView.initLoginPage);
 
 page('/logout', app.loginView.initLogout);
 
+page('/update', app.updateView.initUpdatePage);
+
 // page('/history', app.historyView.initHistoryPage);
 
 page('/history'

@@ -31,7 +31,9 @@ const __API_URL__ = 'http://localhost:3000';
       .then(result => {
         $('#question-form img').attr('src', result);
         $('#question-form p').text(tag);
-      });
+      })
+      .catch(console.error);
+    page('/');
   };
 
   Game.randomArray = ['perfect', 'no no no', 'either way', 'dumb', 'who knows', 'no way', 'hell yes', 'i dont care'];
@@ -59,6 +61,17 @@ const __API_URL__ = 'http://localhost:3000';
       .then(Game.loadAll)
       .then(callback)
       .catch(errorCallback);
+
+  Game.updateTags = (updateObject) => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/gif/update`,
+      method: 'PUT',
+      data: updateObject
+    })
+      .then(() => page('/')
+
+      );
+  };
 
   module.Game = Game;
 

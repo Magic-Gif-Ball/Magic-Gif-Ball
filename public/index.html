@@ -45,6 +45,23 @@
         <p>{{status}}: {{statusText}}</p>
     </div>
   </script>
+
+  <!-- Handlebars template for update view -->
+  <script type="text/x-handlebars-template" id="update-template">
+    <form id="updateTag-form" data-userId={{user_id}}>
+      <h3>Customize Your Tags</h3>
+      <input type="text" name="one" value="{{tagArray.[0]}}">
+      <input type="text" name="two" value="{{tagArray.[1]}}">
+      <input type="text" name="three" value="{{tagArray.[2]}}">
+      <input type="text" name="four" value="{{tagArray.[3]}}">
+      <input type="text" name="five" value="{{tagArray.[4]}}">
+      <input type="text" name="six" value="{{tagArray.[5]}}">
+      <input type="text" name="seven" value="{{tagArray.[6]}}">
+      <input type="text" name="eight" value="{{tagArray.[7]}}"> 
+      <button type="submit">Update Tags</button>
+    </form>
+    <button type="button" id="reset-button">Reset to Default</button>
+  </script>
 </head>
 
 <body>
@@ -93,21 +110,23 @@
       <div class="history"></div>
     </section>
     
-    <section class="login-View container">
-      <form action="" id="login-form">
-        <label>Enter a Username:
+  <section class="login-View container">
+    <form action="" id="login-form">
+      <label>Enter a Username:
           <input type="text" name="userName" placeholder="Username">
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </main>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
+  <section class="update-View container"></section>
+  </main>
+        
   <footer>
     <hr>
     <p>Copyright 2018: Magic Gif Ball</p>
   </footer>
-    
+      
   <!-- jQuery, Handlebars, and page.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
@@ -117,6 +136,7 @@
   <script src="scripts/view/aboutView.js"></script>
   <script src="scripts/view/gameView.js"></script>
   <script src="scripts/view/historyView.js"></script>
+  <script src="scripts/view/updateView.js"></script>
   <script src="scripts/view/loginView.js"></script>
   <script src="scripts/controller/routes.js"></script>
 </body>

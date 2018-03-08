@@ -3,25 +3,20 @@ var app = app || {};
 
 (function(module) {
 
-
   const gameView = {};
 
-  gameView.initGamePage = function(ctx, next) {
+  gameView.initGamePage = () => {
     $('.container').hide();
     $('.game-View').show();
-    localStorage.tagArray = app.Game.randomArray;
+    if (!localStorage.tagArray) localStorage.tagArray = app.Game.randomArray;
+    $('#question-form').off();
     $('#question-form').on('submit', (event) => {
       event.preventDefault();
-      //save question input
+      console.log('shaking');
       let question = event.target.questionToGifBall.value;
       module.Game.fetchGif(question);
     });
-
-    //other stuff
   };
-
-
-
 
   module.gameView = gameView;
 

@@ -61,20 +61,54 @@ app.get('/api/v1/games', (req, res) => {
 
 app.post('/addUser', bodyParser, (req, res) => {
   let {username, tagArray} = req.body;
-  client.query(`INSERT INTO users(username, responses) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
+  client.query(`INSERT INTO users(username, tag_array) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
     .then((result) => {
-      if (result.rowCount === 0) {
-        client.query(`SELECT users.responses FROM users WHERE username='${username}';`)
-          .then((resultArray) => res.send(resultArray.rows[0].responses))
-          .catch (console.err);
-      }
+      // if (result.rowCount === 0) {
+      client.query(`SELECT users.users_id, users.tag_array FROM users WHERE username='${username}';`)
+        .then((resultArray) => res.send(resultArray.rows[0]))
+        .catch(console.err);
+      // }
     })
-    .catch (console.err);
+    .catch(console.err);
+});
+
+app.put('/api/v1/gif/update', bodyParser, (req, res) => {
+  let {user_id, tagArray} = req.body;
+  client.query(`UPDATE users SET tag_array=$1 WHERE users_id=$2;`, [tagArray, user_id])
+    .then(res.sendStatus(201))
+    .catch(console.err);
 });
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 
+loadDB();
+
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+
+function loadDB() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    users(
+      users_id SERIAL PRIMARY KEY,
+      username VARCHAR(50) UNIQUE NOT NULL,
+      date DATE,
+      tag_array TEXT
+    );`
+  )
+    .catch(console.error);
+ 
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    questions(
+      questions_id SERIAL PRIMARY KEY,
+      questions TEXT,
+      gif VARCHAR (250),
+      userid INTEGER NOT NULL REFERENCES users(users_id),
+      location VARCHAR(250)
+    );`
+  )
+    .catch(console.error);
+}
 
 // env variables for testing locally
 // export PORT=3000
