@@ -46,7 +46,7 @@
 
   <!-- Handlebars template for update view -->
   <script type="text/x-handlebars-template" id="update-template">
-    <  id="updateTag-form" data-userId={{user_id}}>
+    <id="updateTag-form" data-userId={{user_id}}>
       <h3>Customize Your Tags</h3>
       <input type="text" name="one" value="{{tagArray.[0]}}" required>
       <input type="text" name="two" value="{{tagArray.[1]}}" required>
@@ -63,89 +63,87 @@
 </head>
 
 <body>
-  <header>
-    <h1>Magic Gif Ball</h1>
-    
 
-    <h2>Welcome<span id="loginName"></span>!</h2>
-    <img id="hamburger-icon" src="./styles/img_assets/white_Menu-icon.png" width="30" alt="hamburger menu icon" href="update">
+  <div class="wrapper">
+    <header>
+      <h1>Magic Gif Ball</h1>
 
-    <nav id="menu">
-      <ul>
-        <li><a id="home-menu-link" href="/">Home</a></li>
-        <li class="loggedIn"><a id="update-menu-link" href="/update">Customize Tags</a></li>
-        <li class="loggedIn"><a id="history-menu-link" href="/history">History</a></li>
-        <li><a id="about-menu-link" href="/about">About the Creators</a></li>
-        <li><a id="login-menu-link" href="/login">Login</a></li>
-        <li class="loggedIn"><a id="logout-menu-link" href="/logout">Log Out</a></li>
-      </ul>
-    </nav>
-  </header>
+      <h2>Welcome<span id="loginName"></span>!</h2>
+      <img id="hamburger-icon" src="./styles/img_assets/white_Menu-icon.png" width="30" alt="hamburger menu icon" href="update">
 
-  <main>
-    <section class="error-View container"></section>
-  
+      <nav id="menu">
+        <ul>
+          <li><a id="home-menu-link" href="/">Home</a></li>
+          <li class="loggedIn"><a id="update-menu-link" href="/update">Customize Tags</a></li>
+          <li class="loggedIn"><a id="history-menu-link" href="/history">History</a></li>
+          <li><a id="about-menu-link" href="/about">About the Creators</a></li>
+          <li><a id="login-menu-link" href="/login">Login</a></li>
+          <li class="loggedIn"><a id="logout-menu-link" href="/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <section class="about-Us container">
+    <main>
+      <section class="error-View container"></section>
       
-      <h2>About the Creators:</h2>
-      <div class="containing-div">
+      <section class="about-Us container">
+        <h2>About the Creators:</h2>
+        <div class="containing-div">
+          <div class="about-Us-profile">
+            <h3>Beverly</h3>
+            <img src="about-pics/haronsPic.jpg">
+            <p>Hey my name is Beverly I have a dog that I like very much, I don't get to see it as often now that I'm in code bootcamp but... well there's no but.</p>
+          </div>
+          <div class="about-Us-profile">
+            <h3>Patricia</h3>
+            <img src="about-pics/haronsPic.jpg">
+            <p>Why I'm awesome</p>
+          </div>
+          <div class="about-Us-profile">
+            <h3>Tyler</h3>
+            <img src="about-pics/haronsPic.jpg">
+            <p>Why he's awesome</p>
+          </div>
+          <div class="about-Us-profile">
+            <h3>Haron</h3>
+            <img src="about-pics/haronsPic.jpg">
+            <p>Why he's also awesome</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="game-View container">
+        <form action="" id="question-form">
+          <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
+          <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
+          <p></p>
+          <button type="submit">Ask!</button>
+        </form>
+      </section>
+      
+      <section class="history-View container">
+        <!-- change to class, or different id? -->
+        <h2><span class="loginName"></span>'s Gifstory</h2>
+        <div class="history"></div>
+        <div></div>
+      </section>
+      
+      <section class="login-View container">
+        <form action="" id="login-form">
+          <label>Enter a Username:
+              <input type="text" name="userName" placeholder="Username">
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
 
-        <div class="about-Us-profile">
-          <h3>Beverly</h3>
-          <img src="about-pics/haronsPic.jpg">
-          <p>Hey my name is Beverly I have a dog that I like very much, I don't get to see it as often now that I'm in code bootcamp but... well there's no but.</p>
-        </div>
-        
-        <div class="about-Us-profile">
-          <h3>Patricia</h3>
-          <img src="about-pics/haronsPic.jpg">
-          <p>Why I'm awesome</p>
-        </div>
-        
-        <div class="about-Us-profile">
-          <h3>Tyler</h3>
-          <img src="about-pics/haronsPic.jpg">
-          <p>Why he's awesome</p>
-        </div>
-        
-        <div class="about-Us-profile">
-          <h3>Haron</h3>
-          <img src="about-pics/haronsPic.jpg">
-          <p>Why he's also awesome</p>
-        </div>
-      </div>
-    </section>
-    
-    <section class="game-View container">
-      <form action="" id="question-form">
-        <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
-        <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
-        <p></p>
-        <button type="submit">Ask!</button>
-      </form>
-    </section>
-    
-    <section class="history-View container">
-      <!-- change to class, or different id? -->
-      <h2><span class="loginName"></span>'s Gifstory</h2>
-      <div class="history"></div>
-    </section>
-    
-  <section class="login-View container">
-    <form action="" id="login-form">
-      <label>Enter a Username:
-          <input type="text" name="userName" placeholder="Username">
-      </label>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+      <section class="update-View container"></section>
+      </main>
 
-  <section class="update-View container"></section>
-  </main>
-        
-  <footer>
-    <hr>
+    <div class="push"></div>
+  </div> 
+
+  <footer class="footer">
     <p>&copy; 2018 Magic Gif Ball</p>
   </footer>
       
