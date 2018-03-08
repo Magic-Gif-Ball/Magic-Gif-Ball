@@ -30,6 +30,7 @@ All items needed for use of this site are hosted on Heroku. Simply go to https:/
 
 ## Architecture
 
+This is a website that will display gifs from an external API to the view. The user's history is stored in a SQL database and fetched and changed as needed. It utilizes Markdown, CSS, HTML, Handlebars, jQuery, javascript, and the GIPHY API. It utilizes Heroku to deploy the application.
 
 ## Change Log
 
