@@ -11,7 +11,15 @@ var app = app || {};
     $('.history').empty();
     $('.history-View').show();
     module.Game.all.map(game => $('.history').append(game.toHtml()));
-    next();
+
+    // $('#delete-btn').on('click', function() {
+    //   module.Book.destroy($(this).data('id'));
+    // });
+    $('#delete-btn').on('click', function() {
+      console.log($(this).data('id'));
+      module.Game.destroy($(this).data('id'));
+    });
+    // next();
   };
 
   module.historyView = historyView;

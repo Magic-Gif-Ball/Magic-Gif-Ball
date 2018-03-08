@@ -82,6 +82,16 @@ app.put('/api/v1/gif/update', bodyParser, (req, res) => {
     .catch(console.err);
 });
 
+
+//-------------------------
+
+//delete a gif from history
+app.delete('/api/v1/games/:id', (req, res) => {
+  client.query('DELETE FROM questions WHERE questions_id=$1', [req.params.id])
+    .then(() => res.sendStatus(204))
+    .catch(console.error);
+});
+
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 
 loadDB();
@@ -99,7 +109,7 @@ function loadDB() {
     );`
   )
     .catch(console.error);
- 
+
   client.query(`
     CREATE TABLE IF NOT EXISTS
     questions(
@@ -112,6 +122,7 @@ function loadDB() {
   )
     .catch(console.error);
 }
+
 
 // env variables for testing locally
 // export PORT=3000
