@@ -33,7 +33,7 @@
     <div class="history-container">
       <img src="{{gif}}" class="history-image">
       <h3>{{questions}} -> </h3>
-      <button id="delete-btn" data-id="{{id}}" class="">delete</button>
+      <button class="delete-btn" data-id="{{questions_id}}">delete</button>
     </div>
     <hr>
   </script>
@@ -50,14 +50,14 @@
   <script type="text/x-handlebars-template" id="update-template">
     <form id="updateTag-form" data-userId={{user_id}}>
       <h3>Customize Your Tags</h3>
-      <input type="text" name="one" value="{{tagArray.[0]}}">
-      <input type="text" name="two" value="{{tagArray.[1]}}">
-      <input type="text" name="three" value="{{tagArray.[2]}}">
-      <input type="text" name="four" value="{{tagArray.[3]}}">
-      <input type="text" name="five" value="{{tagArray.[4]}}">
-      <input type="text" name="six" value="{{tagArray.[5]}}">
-      <input type="text" name="seven" value="{{tagArray.[6]}}">
-      <input type="text" name="eight" value="{{tagArray.[7]}}"> 
+      <input type="text" name="one" value="{{tagArray.[0]}}" required>
+      <input type="text" name="two" value="{{tagArray.[1]}}" required>
+      <input type="text" name="three" value="{{tagArray.[2]}}" required>
+      <input type="text" name="four" value="{{tagArray.[3]}}" required>
+      <input type="text" name="five" value="{{tagArray.[4]}}" required>
+      <input type="text" name="six" value="{{tagArray.[5]}}" required>
+      <input type="text" name="seven" value="{{tagArray.[6]}}" required>
+      <input type="text" name="eight" value="{{tagArray.[7]}}" required> 
       <button type="submit">Update Tags</button>
     </form>
     <button type="button" id="reset-button">Reset to Default</button>
@@ -73,11 +73,11 @@
       
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/update">Customize Tags</a></li>
-        <li><a href="/history">History</a></li>
+        <li class="loggedIn"><a href="/update">Customize Tags</a></li>
+        <li class="loggedIn"><a href="/history">History</a></li>
         <li><a href="/about">About the Creators</a></li>
         <li><a href="/login">Login</a></li>
-        <li><a href="/logout">Log Out</a></li>
+        <li class="loggedIn"><a href="/logout">Log Out</a></li>
       </ul>
     </nav>
   </header>
@@ -99,10 +99,10 @@
     
     <section class="game-View container">
       <form action="" id="question-form">
-          <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
-          <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
-          <p></p>
-          <button type="submit">Ask!</button>
+        <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
+        <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
+        <p></p>
+        <button type="submit">Ask!</button>
       </form>
     </section>
     

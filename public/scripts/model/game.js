@@ -4,28 +4,19 @@ var app = app || {};
 const __API_URL__ = 'http://localhost:3000';
 // const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
 
-(function(module) {
-  // const Game = {};
+((module) => {
 
   function errorCallback(err) {
     console.error(err);
     module.errorView.initErrorPage(err);
   }
 
-  // Game.fetchGif = function(question) {
-  //   $.get(`${__API_URL__}/api/v1/gif/random`, question)
-  //     .then(result => {
-  //       console.log(result);
-  //       $('#question-form img').attr('src', result);
-  //     });
-  // };
-
   Game.fetchGif = function(questionText) {
     let index = Game.randomArrayIndex();
     let array = localStorage.tagArray.split(',');
     let tag = array[index];
     let user = localStorage.userId;
-    
+
     $.ajax({
       url: `${__API_URL__}/api/v1/gif/random`,
       data: {tag, questionText, user}
@@ -44,7 +35,6 @@ const __API_URL__ = 'http://localhost:3000';
     return Math.floor(Math.random() * (Game.randomArray.length - 1 - 0 + 1)) + 0;
   };
 
-  //get gifs and questions from database
   function Game(rawGameObj) {
     Object.keys(rawGameObj).forEach(key => this[key] = rawGameObj[key]);
   }
@@ -61,7 +51,6 @@ const __API_URL__ = 'http://localhost:3000';
     .map(game => new Game(game));
 
   Game.fetchAll = callback => {
-    // $.get(`${__API_URL__}/api/v1/games`)
     let user1 = localStorage.userId;
     $.ajax({
       url: `${__API_URL__}/api/v1/games`,
@@ -78,12 +67,18 @@ const __API_URL__ = 'http://localhost:3000';
       method: 'PUT',
       data: updateObject
     })
-      .then(() => page('/')
+      .then(() => page('/'));
+  };
 
-      );
+  Game.destroy = questionId => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/gif/${questionId}`,
+      method: 'DELETE',
+    })
+      .then(() => page('/history'))
+      .catch(errorCallback);
   };
 
   module.Game = Game;
 
 })(app);
-

@@ -19,18 +19,7 @@ app.use(cors());
 
 app.use(express.static('./public'));
 
-app.get('/', (req, res) => res.sendFile('index.html', { root: './public' }));
-
-// // get route with no login to retrieve new gif
-// app.get('/api/v1/gif/random', (req, res) => {
-//   giphyClient.random('gifs', {"tag": 'yes'})
-//     .then((response) => {
-//     //put callback here
-//       console.log(response.data.images.original.gif_url);
-//       res.send(response.data.images.original.gif_url);
-//     })
-//     .catch(console.error);
-// });
+app.get('/', (req, res) => res.sendFile('index.html', {root: './public'}));
 
 // get route with login
 app.get('/api/v1/gif/random', (req, res) => {
@@ -41,36 +30,29 @@ app.get('/api/v1/gif/random', (req, res) => {
     })
     .catch(console.error)
     .then((response) => {
-      console.log('hit .then response', req.query.questionText);
       client.query(`
       INSERT INTO questions(gif, questions, userid) VALUES($1, $2, $3)`, [response.data.images.original.gif_url, req.query.questionText, req.query.user]
       );
       return response;
     })
-    // .then(results => res.sendStatus(201))
     .catch(console.error);
 });
 
 //history
 app.get('/api/v1/games', (req, res) => {
-  // console.log(req.query.user1);
   client.query(`SELECT * FROM questions
-  WHERE userid=${req.query.user1}
-  ;`)
+  WHERE userid=${req.query.user1};`)
     .then(results => res.send(results.rows))
-    // .then(results => console.log(results.rows))
     .catch(console.error);
 });
 
 app.post('/addUser', bodyParser, (req, res) => {
   let {username, tagArray} = req.body;
   client.query(`INSERT INTO users(username, tag_array) VALUES ($1, $2) ON CONFLICT DO NOTHING;`, [username, tagArray])
-    .then((result) => {
-      // if (result.rowCount === 0) {
+    .then(() => {
       client.query(`SELECT users.users_id, users.tag_array FROM users WHERE username='${username}';`)
         .then((resultArray) => res.send(resultArray.rows[0]))
         .catch(console.err);
-      // }
     })
     .catch(console.err);
 });
@@ -80,6 +62,12 @@ app.put('/api/v1/gif/update', bodyParser, (req, res) => {
   client.query(`UPDATE users SET tag_array=$1 WHERE users_id=$2;`, [tagArray, user_id])
     .then(res.sendStatus(201))
     .catch(console.err);
+});
+
+app.delete('/api/v1/gif/:id', (req, res) => {
+  client.query('DELETE FROM questions WHERE questions_id=$1', [req.params.id])
+    .then(() => res.sendStatus(204))
+    .catch(console.error);
 });
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
@@ -99,7 +87,7 @@ function loadDB() {
     );`
   )
     .catch(console.error);
- 
+
   client.query(`
     CREATE TABLE IF NOT EXISTS
     questions(
