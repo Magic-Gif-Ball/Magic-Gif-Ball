@@ -9,6 +9,7 @@ var app = app || {};
   gameView.initGamePage = () => {
     $('.loggedIn').hide();
     $('.container').hide();
+    $('#menu').hide();
     $('.game-View').show();
     if (!localStorage.tagArray) localStorage.tagArray = app.Game.randomArray;
     if (localStorage.loggedIn) $('.loggedIn').show();
