@@ -2,8 +2,7 @@
 
 var app = app || {};
 
-(function(module) {
-
+(module => {
 
   const aboutView = {};
 
