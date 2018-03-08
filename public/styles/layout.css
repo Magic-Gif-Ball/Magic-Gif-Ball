@@ -4,9 +4,14 @@ header nav ul {
   list-style: none;
 }
 
-header nav ul li, .about-Us {
+header nav ul li {
   width: 100%;
+  padding: 5px;
   text-align: center;
+}
+
+header nav a {
+  text-decoration-line: none;
 }
 
 button, input {
@@ -29,12 +34,7 @@ button, input {
   margin: auto;
 } */
 
-/* @media only screen and (min-width: 640px) {
-  body {
-  background-color: wheat;
-  }
-} */
-
-hr {
-  margin: 0px;
+.link-icon {
+  width: 15px;
+  height: 15px;
 }
