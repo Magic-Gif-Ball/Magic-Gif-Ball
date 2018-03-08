@@ -87,3 +87,10 @@ const __API_URL__ = 'http://localhost:3000';
 
 })(app);
 
+$('#hamburger-icon').click(function(){
+  $('#menu').toggle();
+});
+
+// $('#home-menu-link, update-menu-link, #history-menu-link, #about-menu-link, #login-menu-link, #logout-menu-link').click(function(){
+//   $('#menu').hide();
+// });
