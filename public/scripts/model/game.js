@@ -33,6 +33,7 @@ const __API_URL__ = 'http://localhost:3000';
         $('#question-form p').text(tag);
       })
       .catch(console.error);
+    page('/');
   };
 
   Game.randomArray = ['perfect', 'no no no', 'either way', 'dumb', 'who knows', 'no way', 'hell yes', 'i dont care'];

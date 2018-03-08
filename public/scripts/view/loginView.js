@@ -28,7 +28,7 @@ var app = app || {};
           localStorage.userId = response.users_id;
         })
         .catch(console.err)
-        .then(page('/'))
+        .then(() => page('/'))
         .catch(console.err);
     });
   };
