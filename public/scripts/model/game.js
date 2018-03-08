@@ -24,9 +24,11 @@ const __API_URL__ = 'http://localhost:3000';
     let index = Game.randomArrayIndex();
     let array = localStorage.tagArray.split(',');
     let tag = array[index];
+    let user = localStorage.userId;
+    
     $.ajax({
       url: `${__API_URL__}/api/v1/gif/random`,
-      data: {tag, questionText}
+      data: {tag, questionText, user}
     })
       .then(result => {
         $('#question-form img').attr('src', result);
@@ -55,7 +57,8 @@ const __API_URL__ = 'http://localhost:3000';
   //array of objects that are question-gif pairs
   Game.all = [];
 
-  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.id - a.id).map(game => new Game(game));
+  Game.loadAll = rows => Game.all = rows.sort((a, b) => b.questions_id - a.questions_id).map(game => new Game(game));
+
   Game.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/games`)
       .then(Game.loadAll)
