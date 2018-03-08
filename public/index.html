@@ -20,9 +20,8 @@
   <meta property="og:type" content="website" />
   <meta name="description" content="A fun gif-generator that answers your burning questions!!" />
   <meta property=”og:description” content="A fun gif-generator that answers your burning questions!!" />
-  <!-- DO: -->
   <!-- add preview image link eventually in content -->
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="https://magic-gif-ball.herokuapp.com/styles/img_assets/gif-ball-2.png" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://magic-gif-ball.herokuapp.com" />
 
@@ -47,7 +46,8 @@
   <!-- Handlebars template for update view -->
   <script type="text/x-handlebars-template" id="update-template">
     <form id="updateTag-form" data-userId={{user_id}}>
-      <h3>Customize Your Tags</h3>
+      <h3>Customize Your Responses!</h3>
+      <p>Examples: "sure", "never", "absolutely", "outlook unclear"</p>
       <input type="text" name="one" value="{{tagArray.[0]}}" required>
       <input type="text" name="two" value="{{tagArray.[1]}}" required>
       <input type="text" name="three" value="{{tagArray.[2]}}" required>
@@ -56,7 +56,7 @@
       <input type="text" name="six" value="{{tagArray.[5]}}" required>
       <input type="text" name="seven" value="{{tagArray.[6]}}" required>
       <input type="text" name="eight" value="{{tagArray.[7]}}" required> 
-      <button type="submit">Update Tags</button>
+      <button type="submit">Update Responses</button>
     </form>
     <button type="button" id="reset-button">Reset to Default</button>
   </script>
@@ -67,7 +67,7 @@
     <h1>Magic Gif Ball</h1>
     
 
-    <h2>Welcome<span id="loginName"></span>!</h2>
+    <h2>Welcome<span class="loginName"></span>!</h2>
     <img id="hamburger-icon" src="./styles/img_assets/white_Menu-icon.png" width="30" alt="hamburger menu icon" href="update">
 
     <nav id="menu">
