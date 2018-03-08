@@ -22,7 +22,7 @@ var app = app || {};
       localStorage.tagArray = userInfo.tagArray;
       module.Game.updateTags(userInfo);
     });
-      
+
     $('#reset-button').on('click', () => {
       userInfo.tagArray = app.Game.randomArray;
       localStorage.tagArray = app.Game.randomArray;

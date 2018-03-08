@@ -3,10 +3,9 @@ var app = app || {};
 
 (function(module) {
 
-
   const gameView = {};
 
-  gameView.initGamePage = function(ctx, next) {
+  gameView.initGamePage = () => {
     $('.container').hide();
     $('.game-View').show();
     if (!localStorage.tagArray) localStorage.tagArray = app.Game.randomArray;
@@ -17,9 +16,6 @@ var app = app || {};
       module.Game.fetchGif(question);
     });
   };
-
-
-
 
   module.gameView = gameView;
 
