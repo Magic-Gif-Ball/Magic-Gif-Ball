@@ -6,9 +6,11 @@ var app = app || {};
   const gameView = {};
 
   gameView.initGamePage = () => {
+    $('.loggedIn').hide();
     $('.container').hide();
     $('.game-View').show();
     if (!localStorage.tagArray) localStorage.tagArray = app.Game.randomArray;
+    if (localStorage.loggedIn) $('.loggedIn').show();
     $('#question-form').off();
     $('#question-form').on('submit', (event) => {
       event.preventDefault();

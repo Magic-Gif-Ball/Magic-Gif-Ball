@@ -12,7 +12,7 @@ var app = app || {};
       event.preventDefault();
       localStorage.loggedIn = true;
       let loginName = event.target.userName.value;
-      localStorage.username = loginName;
+      // localStorage.username = loginName;
       localStorage.tagArray = app.Game.randomArray;
       $('#loginName').text(` ${loginName}`);
       let tagArray = app.Game.randomArray.toString();
