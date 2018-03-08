@@ -18,22 +18,20 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Gif Magic Eight Ball" />
   <meta property="og:type" content="website" />
-  <meta name="description" content="A fun and user-friendly game for all ages!!" />
-  <meta property=”og:description” content="A fun and user-friendly game for all ages!!" />
+  <meta name="description" content="A fun gif-generator that answers your burning questions!!" />
+  <meta property=”og:description” content="A fun gif-generator that answers your burning questions!!" />
   <!-- DO: -->
   <!-- add preview image link eventually in content -->
   <meta property="og:image" content="" />
   <meta property="og:locale" content="en_US" />
-  <!-- DO: -->
-  <!-- add url link in content. Will be to our Heroku deployment -->
-  <meta property="og:url" content="" />
+  <meta property="og:url" content="https://magic-gif-ball.herokuapp.com" />
 
   <!-- Handlebars template for history view -->
   <script type="text/x-handlebars-template" id="gif-history-template">
     <div class="history-container">
       <img src="{{gif}}" class="history-image">
       <h3>{{questions}} -> </h3>
-      <button id="delete-btn" data-id="{{id}}" class="">delete</button>
+      <button class="delete-btn" data-id="{{questions_id}}">delete</button>
     </div>
     <hr>
   </script>
@@ -50,14 +48,14 @@
   <script type="text/x-handlebars-template" id="update-template">
     <  id="updateTag-form" data-userId={{user_id}}>
       <h3>Customize Your Tags</h3>
-      <input type="text" name="one" value="{{tagArray.[0]}}">
-      <input type="text" name="two" value="{{tagArray.[1]}}">
-      <input type="text" name="three" value="{{tagArray.[2]}}">
-      <input type="text" name="four" value="{{tagArray.[3]}}">
-      <input type="text" name="five" value="{{tagArray.[4]}}">
-      <input type="text" name="six" value="{{tagArray.[5]}}">
-      <input type="text" name="seven" value="{{tagArray.[6]}}">
-      <input type="text" name="eight" value="{{tagArray.[7]}}"> 
+      <input type="text" name="one" value="{{tagArray.[0]}}" required>
+      <input type="text" name="two" value="{{tagArray.[1]}}" required>
+      <input type="text" name="three" value="{{tagArray.[2]}}" required>
+      <input type="text" name="four" value="{{tagArray.[3]}}" required>
+      <input type="text" name="five" value="{{tagArray.[4]}}" required>
+      <input type="text" name="six" value="{{tagArray.[5]}}" required>
+      <input type="text" name="seven" value="{{tagArray.[6]}}" required>
+      <input type="text" name="eight" value="{{tagArray.[7]}}" required> 
       <button type="submit">Update Tags</button>
     </form>
     <button type="button" id="reset-button">Reset to Default</button>
@@ -68,66 +66,69 @@
   <header>
     <h1>Magic Gif Ball</h1>
     
+
     <h2>Welcome<span id="loginName"></span>!</h2>
+    <img id="hamburger-icon" src="./styles/img_assets/white_Menu-icon.png" width="30" alt="hamburger menu icon" href="update">
+
     <nav id="menu">
-      
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/update">Customize Tags</a></li>
-        <li><a href="/history">History</a></li>
-        <li><a href="/about">About the Creators</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/logout">Log Out</a></li>
+        <li><a id="home-menu-link" href="/">Home</a></li>
+        <li class="loggedIn"><a id="update-menu-link" href="/update">Customize Tags</a></li>
+        <li class="loggedIn"><a id="history-menu-link" href="/history">History</a></li>
+        <li><a id="about-menu-link" href="/about">About the Creators</a></li>
+        <li><a id="login-menu-link" href="/login">Login</a></li>
+        <li class="loggedIn"><a id="logout-menu-link" href="/logout">Log Out</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="error-View container"></section>
-    
+  
+
     <section class="about-Us container">
-      <h2>About the Creators:</h2>
-
-    <div class="containing-div">
-      <div class="about-Us-profile">
-        <h3>Beverly</h3>
-        <img src="about-pics/haronsPic.jpg">
-        <p>Penatibus cras odio. Mauris magnis tincidunt. Nullam imperdiet lacinia. Odio a luctus egestas egestas a pretium neque justo consectetuer libero tincidunt tellus eu enim.</p>
-      </div>
       
-      <div class="about-Us-profile">
-        <h3>Patricia</h3>
-        <img src="about-pics/haronsPic.jpg">
-        <p>Nullam imperdiet lacinia. Odio a luctus egestas egestas a pretium neque justo consectetuer libero tincidunt tellus eu enim.</p>
+      <h2>About the Creators:</h2>
+      <div class="containing-div">
+
+        <div class="about-Us-profile">
+          <h3>Beverly</h3>
+          <img src="about-pics/haronsPic.jpg">
+          <p>Hey my name is Beverly I have a dog that I like very much, I don't get to see it as often now that I'm in code bootcamp but... well there's no but.</p>
+        </div>
+        
+        <div class="about-Us-profile">
+          <h3>Patricia</h3>
+          <p>Why I'm awesome</p>
+          <img src="about-pics/haronsPic.jpg">
+        </div>
+        
+        <div class="about-Us-profile">
+          <h3>Tyler</h3>
+          <p>Why he's awesome</p>
+          <img src="about-pics/haronsPic.jpg">
+        </div>
+        
+        <div class="about-Us-profile">
+          <h3>Haron</h3>
+          <p>Why he's also awesome</p>
+          <img src="about-pics/haronsPic.jpg">
+        </div>
       </div>
-
-      <div class="about-Us-profile">
-        <h3>Tyler</h3>
-        <p>Why he's awesome</p>
-        <img src="about-pics/haronsPic.jpg">
-      </div>
-
-      <div class="about-Us-profile">
-        <h3>Haron</h3>
-        <img src="about-pics/haronsPic.jpg">
-        <p>Nullam imperdiet lacinia. Odio a luctus egestas egestas a pretium neque justo consectetuer libero tincidunt tellus eu enim.</p>
-      </div> 
-    </div>
-    
-
     </section>
     
     <section class="game-View container">
       <form action="" id="question-form">
-          <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
-          <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
-          <p></p>
-          <button type="submit">Ask!</button>
+        <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
+        <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
+        <p></p>
+        <button type="submit">Ask!</button>
       </form>
     </section>
     
     <section class="history-View container">
-      <h2>Your Gifstory</h2>
+      <!-- change to class, or different id? -->
+      <h2><span class="loginName"></span>'s Gifstory</h2>
       <div class="history"></div>
     </section>
     
@@ -145,7 +146,7 @@
         
   <footer>
     <hr>
-    <p>Copyright 2018: Magic Gif Ball</p>
+    <p>&copy; 2018 Magic Gif Ball</p>
   </footer>
       
   <!-- jQuery, Handlebars, and page.js -->

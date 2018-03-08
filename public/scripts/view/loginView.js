@@ -1,7 +1,9 @@
 'use strict';
+
 var app = app || {};
 
-(function(module) {
+(module => {
+
   const loginView = {};
 
   loginView.initLoginPage = function() {
@@ -12,9 +14,8 @@ var app = app || {};
       event.preventDefault();
       localStorage.loggedIn = true;
       let loginName = event.target.userName.value;
-      localStorage.username = loginName;
       localStorage.tagArray = app.Game.randomArray;
-      $('#loginName').text(` ${loginName}`);
+      $('.loginName').text(` ${loginName}`);
       let tagArray = app.Game.randomArray.toString();
       let data = {
         username: loginName,
@@ -35,9 +36,10 @@ var app = app || {};
 
   loginView.initLogout = function() {
     localStorage.clear();
-    $('#loginName').empty();
+    $('.loginName').empty();
     page('/');
   };
 
   module.loginView = loginView;
+
 })(app);

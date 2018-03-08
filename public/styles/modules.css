@@ -2,7 +2,15 @@
 
 
 header {
-  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+header img {
+  position: absolute;
+  top: 4px;
+  right: 10px;
 }
 
 /* global styles */
@@ -24,7 +32,8 @@ main .game-View {
   margin-right: auto;
   width: 375px;
   height: 400px;
-  background-image: url('https://vectr.com/tylerfishbone/a1hmK0TGTa.png?width=375&height=375&select=a1hmK0TGTapage0');
+  background-image: url('./img_assets/gif-ball-2.png');
+  background-size: 375px 375px;
   background-repeat: no-repeat;
 }
 
@@ -70,6 +79,28 @@ main .game-View button {
   border: 3px solid rgb(156, 156, 156);
 }
 
+/* about us view container */
+main .about-Us .containing-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+
+
+main .about-Us .about-Us-profile {
+  display: inline-block;
+  max-width: 200px;
+  margin: 20px; 
+}
+
+
+main .about-Us .about-Us-profile img {
+  width: 200px;
+}
+
+
+
+
 /* historyView container  */
 
 main .history-View {
@@ -90,27 +121,26 @@ main .history-View .history img {
   max-height: 200px;
 }
 
-/* each profile containing div */
-main .about-Us .containing-div {
-  display: inline;
-  position: relative;
-  
+/* update view */
+
+main .update-View {
+  width: 80%;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f65f9e;
 }
 
-/* each profile div containing paragraph and h1 */
-main .about-Us .about-Us-profile {
-  display: inline-block;
-  max-width: 200px;
-  margin: 20px;
- 
-  
+main .update-View form input{
+  padding: 5px;
 }
 
-/* each actual profile image */
-main .about-Us .about-Us-profile img {
-  width: 200px;
-  position: absolute;
-}
+
+
 
 /* footer */
 

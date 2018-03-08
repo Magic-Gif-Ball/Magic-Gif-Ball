@@ -2,20 +2,31 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background-image: url('./img_assets/seamless-background-80s67-.jpg');
+  color: white;
+}
+
+a {
+  color: white;
 }
 
 header {
-  /* background-color: darkgrey; */
+  background-color: #2d374fea;
+
 }
 
 main {
   /* background-color: lightgray; */
+  height: 400px;
 }
 
 footer {
-  /* background-color: darkgrey; */
+  background-color: #2d374fea;
+  height: 80px;
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  color: white;
 }

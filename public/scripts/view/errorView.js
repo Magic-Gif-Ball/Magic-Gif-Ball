@@ -2,7 +2,8 @@
 
 var app = app || {};
 
-(function (module) {
+(module => {
+
   const errorView = {};
 
   errorView.initErrorPage = function(err) {
@@ -14,4 +15,5 @@ var app = app || {};
   };
 
   module.errorView = errorView;
+
 })(app);
