@@ -82,8 +82,34 @@ app.put('/api/v1/gif/update', bodyParser, (req, res) => {
 
 app.get('*', (req, res) => res.sendFile('index.html', {root: './public'}));
 
+loadDB();
+
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
+function loadDB() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    users(
+      users_id SERIAL PRIMARY KEY,
+      username VARCHAR(50) UNIQUE NOT NULL,
+      date DATE,
+      tag_array TEXT
+    );`
+  )
+    .catch(console.error);
+ 
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    questions(
+      questions_id SERIAL PRIMARY KEY,
+      questions TEXT,
+      gif VARCHAR (250),
+      userid INTEGER NOT NULL REFERENCES users(users_id),
+      location VARCHAR(250)
+    );`
+  )
+    .catch(console.error);
+}
 // env variables for testing locally
 // export PORT=3000
 // export DATABASE_URL=postgres://localhost:5432/magic_gif_ball
