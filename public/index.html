@@ -29,9 +29,11 @@
   <!-- Handlebars template for history view -->
   <script type="text/x-handlebars-template" id="gif-history-template">
     <div class="history-container">
-      <img src="{{gif}}" class="history-image">
-      <h3>{{questions}} -> </h3>
-      <button class="delete-btn" data-id="{{questions_id}}">delete</button>
+      <div class="history-absolute-container">
+        <img src="{{gif}}" class="history-image">
+        <h3>{{questions}}</h3>
+        <button class="delete-btn" data-id="{{questions_id}}">delete</button>
+      </div>
     </div>
     <hr>
   </script>
@@ -64,7 +66,7 @@
 
 <body>
   <header>
-    <h1>Magic Gif Ball</h1>
+    <a href="/"><h1>Magic Gif Ball</h1></a>
     
 
     <h2>Welcome<span id="loginName"></span>!</h2>
@@ -84,7 +86,6 @@
 
   <main>
     <section class="error-View container"></section>
-  
 
     <section class="about-Us container">
       
@@ -118,13 +119,15 @@
     </section>
     
     <section class="game-View container">
-      <form action="" id="question-form">
-        <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
-        <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
-        <p></p>
-        <button type="submit">Ask!</button>
-      </form>
-    </section>
+      <div id="game-View-form-container">
+        <form action="" id="question-form">
+          <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
+          <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
+          <p></p>
+          <button type="submit">Ask!</button>
+        </form>
+      </div>
+      </section>
     
     <section class="history-View container">
       <!-- change to class, or different id? -->
