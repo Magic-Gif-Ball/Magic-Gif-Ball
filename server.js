@@ -73,9 +73,8 @@ app.post('/addUser', bodyParser, (req, res) => {
 });
 
 app.put('/api/v1/gif/update', bodyParser, (req, res) => {
-  // console.log(req.body);
   let {user_id, tagArray} = req.body;
-  client.query(`UPDATE users SET tag_array=$1 WHERE id=$2;`, [tagArray, user_id])
+  client.query(`UPDATE users SET tag_array=$1 WHERE users_id=$2;`, [tagArray, user_id])
     .then(res.sendStatus(201))
     .catch(console.err);
 });
@@ -110,6 +109,7 @@ function loadDB() {
   )
     .catch(console.error);
 }
+
 // env variables for testing locally
 // export PORT=3000
 // export DATABASE_URL=postgres://localhost:5432/magic_gif_ball
