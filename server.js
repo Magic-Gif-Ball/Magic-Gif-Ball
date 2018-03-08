@@ -21,9 +21,8 @@ app.use(express.static('./public'));
 
 app.get('/', (req, res) => res.sendFile('index.html', {root: './public'}));
 
-// get route with login
 app.get('/api/v1/gif/random', (req, res) => {
-  giphyClient.random('gifs', {"tag": `${req.query.tag}`})
+  giphyClient.random('gifs', {'tag': `${req.query.tag}`})
     .then((response) => {
       res.send(response.data.images.original.gif_url);
       return response;
