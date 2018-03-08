@@ -123,3 +123,5 @@ https://api.jquery.com
 https://leonard.io/blog/2012/11/handlebars-array-access/
 
 https://css-tricks.com/centering-css-complete-guide/
+
+https://www.w3schools.com/css/css_align.asp

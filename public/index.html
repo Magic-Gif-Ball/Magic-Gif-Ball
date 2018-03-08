@@ -18,15 +18,13 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Gif Magic Eight Ball" />
   <meta property="og:type" content="website" />
-  <meta name="description" content="A fun and user-friendly game for all ages!!" />
-  <meta property=”og:description” content="A fun and user-friendly game for all ages!!" />
+  <meta name="description" content="A fun gif-generator that answers your burning questions!!" />
+  <meta property=”og:description” content="A fun gif-generator that answers your burning questions!!" />
   <!-- DO: -->
   <!-- add preview image link eventually in content -->
   <meta property="og:image" content="" />
   <meta property="og:locale" content="en_US" />
-  <!-- DO: -->
-  <!-- add url link in content. Will be to our Heroku deployment -->
-  <meta property="og:url" content="" />
+  <meta property="og:url" content="https://magic-gif-ball.herokuapp.com" />
 
   <!-- Handlebars template for history view -->
   <script type="text/x-handlebars-template" id="gif-history-template">
@@ -68,7 +66,8 @@
   <header>
     <h1>Magic Gif Ball</h1>
     
-    <h2>Welcome<span id="loginName"></span>!</h2>
+    <!-- change target id to class -->
+    <h2>Welcome<span class="loginName"></span>!</h2>
     <nav id="menu">
       
       <ul>
@@ -107,7 +106,8 @@
     </section>
     
     <section class="history-View container">
-      <h2>Your Gifstory</h2>
+      <!-- change to class, or different id? -->
+      <h2><span class="loginName"></span> Gifstory</h2>
       <div class="history"></div>
     </section>
     
