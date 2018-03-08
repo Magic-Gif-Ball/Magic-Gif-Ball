@@ -4,22 +4,22 @@
 **Version**: 1.0.0
 
 ## Overview
-Magic Gif Ball is a web application utilizing the Giphy API (https://developers.giphy.com/) that allows users to ask a question of the site and receive a response in the form of a reaction GIF.
+Magic Gif Ball is a web application utilizing the Giphy API (https://developers.giphy.com/) that allows users to ask a yes/no question and receive a response in the form of a reaction GIF.
 
 For example: 'Should I finally ask Brian out on a date?'
 
 Magic Gif Ball Response: 
 ![picture of woman waving arms no](https://media.giphy.com/media/l1J9OVgun9akcO5C8/giphy.gif "No No No")
 
-No login or username is required to use the site, but if users would like a customized experience allowing them to change their response tags or to keep a history of their questions asked and the response GIFs, they will need to login. 
+No login or username is required to use the app, but if users would like a customized experience allowing them to change their response tags or to keep a history of their questions asked and the response GIFs, they will need to login. There is also the ability to delete unwanted questions/responses from their history.
 
 ## How It Works
-Each time a user submits a question, Magic Gif Ball selects 1 of 8 standard responses (e.g., "no no no," "absolutely," "who knows"). Then that response is sent to the Giphy API which returns a random GIF that is tagged with that response (https://developers.giphy.com/docs/#random-endpoint). That GIF is then diplayed to the user as a repsonse to their question.
+Each time a user submits a question, Magic Gif Ball randomly selects 1 of 8 standard responses (e.g., "no no no," "absolutely," "who knows"). Then that response is sent to the Giphy API which returns a random GIF that is tagged with that response (https://developers.giphy.com/docs/#random-endpoint). That GIF is then diplayed to the user as a repsonse to their question.
 
-Users also have the opportunity to edit these 8 standard responses so they can get GIFs that are more to their liking. They simply need to navigate to the customize tag page (which again only exists once they login), then they can replace any of the responses with gif tags that are more to their liking.
+Users also have the opportunity to edit these 8 standard responses so they can get GIFs that are more to their liking. They simply need to navigate to the customize tag page (which only exists once they login) and replace any of the responses with GIF tags that are more to their liking.
 
 ## Getting Started
-To replicate this app, you could fork and clone our GitHub (https://github.com/Magic-Gif-Ball/Magic-Gif-Ball). You would also need to install the npm packages to get the dependencies used in this app and have an empty database set up.
+To replicate this app, you would fork and clone our GitHub (https://github.com/Magic-Gif-Ball/Magic-Gif-Ball). Then you would need to install the npm packages to get the dependencies used in this app and have an empty database set up.
 
 ## Architecture
 This app grabs GIFs from an external API. A SQL database is used for persistence to store user data. Other technologies used are HTML, CSS, JavaScript, jQuery, Handlebars, and PageJS. Heroku is used for deployment.
@@ -99,10 +99,13 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 03/09/2018 1300 - presentation
 
 ## Credits and Collaborations
-- https://developers.giphy.com/
+- https://gitignore.io
+- http://meyerweb.com/eric/tools/css/reset/ 
+- CF 301 linter
 - https://developers.giphy.com/
 - https://sqlbolt.com/lesson/select_queries_review
 - https://api.jquery.com
 - https://leonard.io/blog/2012/11/handlebars-array-access/
 - https://css-tricks.com/centering-css-complete-guide/
+- StackOverflow
 - Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff)
