@@ -1,4 +1,21 @@
+/* base */
 
 body {
-  background-color: #50c48a;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  /* background-color: darkgrey; */
+}
+
+main {
+  /* background-color: lightgray; */
+}
+
+footer {
+  /* background-color: darkgrey; */
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
 }
