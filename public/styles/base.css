@@ -24,21 +24,54 @@ a {
 }
 
 header {
-  background-color: #2d374fea;
+
+   background-color: #2d374f;
 }
 
 footer {
-  background-color: #2d374fea;
+  background-color: #2d374f;
   width:100%; 
   border: 1px solid white;
 }
 
 .footer, .push {
   height: 60px;
+=======
+ 
 }
+
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 25px;
+  font-size: 5vw;
   color: white;
+}
+
+h2 {
+  font-size: 3vw;
+}
+
+h3 {
+  font-size: 2vw;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  font-size: 25px;
+  /* text-decoration-line: none; */
+}
+
+label {
+  font-size: 25px;
+}
+
+input {
+  font-size: 25px;
+}
+
+button {
+  font-size: 25px;
 }

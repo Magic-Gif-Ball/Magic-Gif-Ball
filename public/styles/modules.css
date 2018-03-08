@@ -25,22 +25,32 @@ h3, label {
   margin: 10px;
 }
 
+.login-View, .update-View, .error-View, .about-Us, .history-container {
+  width: 80%;
+  min-height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f65f9e;
+}
+
 /* game-View container */
 main .game-View {
   position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 375px;
-  height: 400px;
+  min-height: 400px;
   background-image: url('./img_assets/gif-ball-2.png');
   background-size: 375px 375px;
   background-repeat: no-repeat;
 }
 
-main .game-View form * {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+main .game-View form {
+  margin-top: 28px;
 }
 
 main .game-View input {
@@ -103,14 +113,21 @@ main .about-Us .about-Us-profile img {
 
 /* historyView container  */
 
-main .history-View {
+main .history-container {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  min-width: 350px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-main .history-View .history-container {
-  margin: 20px;
+main .history-View .history-container .history-absolute-container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 main .history-View .history img {
@@ -121,11 +138,14 @@ main .history-View .history img {
   max-height: 200px;
 }
 
+
+
+
 /* update view */
 
 main .update-View {
   width: 80%;
-  height: 350px;
+  /* height: 350px; */
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
@@ -139,8 +159,65 @@ main .update-View form input{
   padding: 5px;
 }
 
+.login-View {
+  position:relative;
+}
+
+.login-View form {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-View form * {
+  padding: 10px;
+}
+
+
 /* footer */
 
 footer {
   text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  /* header {
+  background-color: wheat;
+  } */
+
+  .login-View, .update-View, .error-View, .about-Us, .history-container {
+    max-width: 700px;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #f65f9e;
+  }
+
+  main .game-View {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    min-height: 400px;
+    height: 600px;
+    background-image: url('./img_assets/gif-ball-2.png');
+    background-size: 600px 600px;
+    background-repeat: no-repeat;
+  }
+
+  main .game-View img {
+  max-width: 600px;
+  max-height: 400px;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 }

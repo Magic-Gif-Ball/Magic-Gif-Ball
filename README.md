@@ -95,6 +95,12 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 
 03/08/2018 1100 - fixed DELETE bug
 
+03/08/2018 1130 - hide desired items, clean up code
+
+03/08/2018 1300 - meta tags updated, login name added to Gifstory page
+
+03/08/2018 1330 - more styling, background colors, positioning, etc
+
 ##### Day 5
 03/09/2018 1300 - presentation
 
@@ -107,6 +113,7 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 - https://api.jquery.com
 - https://leonard.io/blog/2012/11/handlebars-array-access/
 - https://css-tricks.com/centering-css-complete-guide/
+- Font Awesome
 - StackOverflow
 - Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff)
 
