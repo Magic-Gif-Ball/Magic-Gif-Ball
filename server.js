@@ -41,9 +41,9 @@ app.get('/api/v1/gif/random', (req, res) => {
     })
     .catch(console.error)
     .then((response) => {
-      console.log('hit .then response');
+      console.log('hit .then response', req.query.questionText);
       client.query(`
-      INSERT INTO questions(gif, questions) VALUES($1, $2)`, [response.data.images.original.gif_url, req.query.questionText]
+      INSERT INTO questions(gif, questions, userid) VALUES($1, $2, $3)`, [response.data.images.original.gif_url, req.query.questionText, req.query.user]
       );
       return response;
     })
@@ -53,7 +53,10 @@ app.get('/api/v1/gif/random', (req, res) => {
 
 //history
 app.get('/api/v1/games', (req, res) => {
-  client.query(`SELECT id, questions, gif, userId, location FROM questions;`)
+  // console.log(req.query.user1);
+  client.query(`SELECT * FROM questions
+  WHERE userid=${req.query.user1}
+  ;`)
     .then(results => res.send(results.rows))
     // .then(results => console.log(results.rows))
     .catch(console.error);
