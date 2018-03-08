@@ -66,34 +66,55 @@
   <header>
     <h1>Magic Gif Ball</h1>
     
-    <!-- change target id to class -->
-    <h2>Welcome<span class="loginName"></span>!</h2>
+
+    <h2>Welcome<span id="loginName"></span>!</h2>
+    <img id="hamburger-icon" src="./styles/img_assets/white_Menu-icon.png" width="30" alt="hamburger menu icon" href="update">
+
     <nav id="menu">
-      
       <ul>
-        <li><a href="/">Home</a></li>
-        <li class="loggedIn"><a href="/update">Customize Tags</a></li>
-        <li class="loggedIn"><a href="/history">History</a></li>
-        <li><a href="/about">About the Creators</a></li>
-        <li><a href="/login">Login</a></li>
-        <li class="loggedIn"><a href="/logout">Log Out</a></li>
+        <li><a id="home-menu-link" href="/">Home</a></li>
+        <li class="loggedIn"><a id="update-menu-link" href="/update">Customize Tags</a></li>
+        <li class="loggedIn"><a id="history-menu-link" href="/history">History</a></li>
+        <li><a id="about-menu-link" href="/about">About the Creators</a></li>
+        <li><a id="login-menu-link" href="/login">Login</a></li>
+        <li class="loggedIn"><a id="logout-menu-link" href="/logout">Log Out</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="error-View container"></section>
-    
+  
+
     <section class="about-Us container">
+      
       <h2>About the Creators:</h2>
-      <h3>Beverly</h3>
-      <p>Why she's awesome</p>
-      <h3>Patricia</h3>
-      <p>Why I'm awesome</p>
-      <h3>Tyler</h3>
-      <p>Why he's awesome</p>
-      <h3>Haron</h3>
-      <p>Why he's also awesome</p>
+      <div class="containing-div">
+
+        <div class="about-Us-profile">
+          <h3>Beverly</h3>
+          <img src="about-pics/haronsPic.jpg">
+          <p>Hey my name is Beverly I have a dog that I like very much, I don't get to see it as often now that I'm in code bootcamp but... well there's no but.</p>
+        </div>
+        
+        <div class="about-Us-profile">
+          <h3>Patricia</h3>
+          <p>Why I'm awesome</p>
+          <img src="about-pics/haronsPic.jpg">
+        </div>
+        
+        <div class="about-Us-profile">
+          <h3>Tyler</h3>
+          <p>Why he's awesome</p>
+          <img src="about-pics/haronsPic.jpg">
+        </div>
+        
+        <div class="about-Us-profile">
+          <h3>Haron</h3>
+          <p>Why he's also awesome</p>
+          <img src="about-pics/haronsPic.jpg">
+        </div>
+      </div>
     </section>
     
     <section class="game-View container">
