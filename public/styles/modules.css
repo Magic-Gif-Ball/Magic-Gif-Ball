@@ -90,6 +90,27 @@ main .history-View .history img {
   max-height: 200px;
 }
 
+/* each profile containing div */
+main .about-Us .containing-div {
+  display: inline;
+  position: relative;
+  
+}
+
+/* each profile div containing paragraph and h1 */
+main .about-Us .about-Us-profile {
+  display: inline-block;
+  max-width: 200px;
+  margin: 20px;
+ 
+  
+}
+
+/* each actual profile image */
+main .about-Us .about-Us-profile img {
+  width: 200px;
+  position: absolute;
+}
 
 /* footer */
 

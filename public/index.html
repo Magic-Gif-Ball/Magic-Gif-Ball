@@ -48,7 +48,7 @@
 
   <!-- Handlebars template for update view -->
   <script type="text/x-handlebars-template" id="update-template">
-    <form id="updateTag-form" data-userId={{user_id}}>
+    <  id="updateTag-form" data-userId={{user_id}}>
       <h3>Customize Your Tags</h3>
       <input type="text" name="one" value="{{tagArray.[0]}}">
       <input type="text" name="two" value="{{tagArray.[1]}}">
@@ -87,14 +87,34 @@
     
     <section class="about-Us container">
       <h2>About the Creators:</h2>
-      <h3>Beverly</h3>
-      <p>Why she's awesome</p>
-      <h3>Patricia</h3>
-      <p>Why I'm awesome</p>
-      <h3>Tyler</h3>
-      <p>Why he's awesome</p>
-      <h3>Haron</h3>
-      <p>Why he's also awesome</p>
+
+    <div class="containing-div">
+      <div class="about-Us-profile">
+        <h3>Beverly</h3>
+        <img src="about-pics/haronsPic.jpg">
+        <p>Penatibus cras odio. Mauris magnis tincidunt. Nullam imperdiet lacinia. Odio a luctus egestas egestas a pretium neque justo consectetuer libero tincidunt tellus eu enim.</p>
+      </div>
+      
+      <div class="about-Us-profile">
+        <h3>Patricia</h3>
+        <img src="about-pics/haronsPic.jpg">
+        <p>Nullam imperdiet lacinia. Odio a luctus egestas egestas a pretium neque justo consectetuer libero tincidunt tellus eu enim.</p>
+      </div>
+
+      <div class="about-Us-profile">
+        <h3>Tyler</h3>
+        <p>Why he's awesome</p>
+        <img src="about-pics/haronsPic.jpg">
+      </div>
+
+      <div class="about-Us-profile">
+        <h3>Haron</h3>
+        <img src="about-pics/haronsPic.jpg">
+        <p>Nullam imperdiet lacinia. Odio a luctus egestas egestas a pretium neque justo consectetuer libero tincidunt tellus eu enim.</p>
+      </div> 
+    </div>
+    
+
     </section>
     
     <section class="game-View container">
