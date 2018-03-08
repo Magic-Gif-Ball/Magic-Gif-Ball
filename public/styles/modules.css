@@ -79,16 +79,26 @@ main .game-View button {
   border: 3px solid rgb(156, 156, 156);
 }
 
-/* about us view */
+/* about us view container */
+main .about-Us .containing-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+
+
 main .about-Us .about-Us-profile {
   display: inline-block;
   max-width: 200px;
-  margin: 20px;
+  margin: 20px; 
 }
+
 
 main .about-Us .about-Us-profile img {
   width: 200px;
 }
+
+
 
 
 /* historyView container  */
