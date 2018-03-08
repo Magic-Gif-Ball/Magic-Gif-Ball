@@ -4,11 +4,30 @@ header nav ul {
   list-style: none;
 }
 
-header nav ul li {
+header nav ul li, .about-Us {
   width: 100%;
   text-align: center;
 }
 
+button, input {
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.login-View {
+  text-align: center;
+  width: 50%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: auto;
+}
+
+/* #login-form button {
+  align: center;
+  margin: auto;
+} */
 
 /* @media only screen and (min-width: 640px) {
   body {
