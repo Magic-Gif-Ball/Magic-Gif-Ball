@@ -109,3 +109,4 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 - https://css-tricks.com/centering-css-complete-guide/
 - StackOverflow
 - Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff)
+
