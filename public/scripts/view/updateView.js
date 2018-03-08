@@ -3,6 +3,7 @@
 var app = app || {};
 
 ((module) => {
+
   const updateView = {};
 
   updateView.initUpdatePage = () => {

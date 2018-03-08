@@ -1,23 +1,19 @@
 'use strict';
+
 var app = app || {};
 
-(function(module) {
+(module => {
 
   const historyView = {};
 
-  //when click history button, trigger history view and populate history
-  historyView.initHistoryPage = function(ctx) {
+  historyView.initHistoryPage = function() {
     $('.container').hide();
     $('.history').empty();
     $('.history-View').show();
     module.Game.all.map(game => $('.history').append(game.toHtml()));
-    $('#delete-btn').on('click', function() {
-      console.log($(this).data('id'));
+    $('.delete-btn').on('click', function() {
       module.Game.destroy($(this).data('id'));
     });
-
-
-    // next();
   };
 
   module.historyView = historyView;
