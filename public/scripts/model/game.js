@@ -83,6 +83,16 @@ const __API_URL__ = 'http://localhost:3000';
       );
   };
 
+  Game.destroy = (questionId) => {
+    console.log(questionId);
+    $.ajax({
+      url: `${__API_URL__}/api/v1/gif/${questionId}`,
+      method: 'DELETE'
+    })
+      .then(() => page('/history'))
+      .catch(errorCallback);
+  };
+
   module.Game = Game;
 
 })(app);

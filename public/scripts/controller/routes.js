@@ -13,7 +13,7 @@ page('/update', app.updateView.initUpdatePage);
 // page('/history', app.historyView.initHistoryPage);
 
 page('/history'
-  , (ctx, next) => app.Game.fetchAll(() => app.historyView.initHistoryPage(ctx, next))
+  , (ctx) => app.Game.fetchAll(() => app.historyView.initHistoryPage(ctx))
 );
 
 page();
