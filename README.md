@@ -101,6 +101,10 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 
 03/08/2018 1330 - more styling, background colors, positioning, etc
 
+03/08/2018 1430 - more css, making text more readable, making buttons bigger, 
+
+03/08/2018 1530 - making gifs of creators for the About Us page
+
 03/08/2018 1920 - styled at the projector with programming mob and edwin who was very helpful. 
 
 ##### Day 5
