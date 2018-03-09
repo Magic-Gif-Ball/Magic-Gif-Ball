@@ -119,6 +119,7 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 - https://css-tricks.com/centering-css-complete-guide/
 - StackOverflow
 - https://api.jqueryui.com/shake-effect/
+- https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix
 - https://www.w3schools.com/howto/howto_css_shake_image.asp
 - Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff)
 
