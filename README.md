@@ -101,6 +101,8 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 
 03/08/2018 1330 - more styling, background colors, positioning, etc
 
+03/08/2018 1920 - styled at the projector with programming mob and edwin who was very helpful. 
+
 ##### Day 5
 03/09/2018 1300 - presentation
 
@@ -115,5 +117,6 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 - https://css-tricks.com/centering-css-complete-guide/
 - Font Awesome
 - StackOverflow
-- Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff)
+- Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff, Edwin)
+- https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix
 
