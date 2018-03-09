@@ -44,13 +44,23 @@ main .game-View {
   margin-right: auto;
   width: 375px;
   min-height: 400px;
-  background-image: url('./img_assets/gif-ball-2.png');
+  /* background-image: url('./img_assets/gif-ball-2.png');
   background-size: 375px 375px;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 main .game-View form {
   margin-top: 28px;
+}
+
+/* 8 ball picture */
+main .game-View #gif-ball-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 375px;
+  height: 375px;
 }
 
 main .game-View input {
@@ -63,11 +73,12 @@ main .game-View input {
   transform: translate(-50%, -50%);
 }
 
-main .game-View img {
+/* gif from giphy */
+main .game-View #retrieved-gif {
   max-width: 300px;
   max-height: 200px;
   position: absolute;
-  top: 47%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -258,20 +269,55 @@ footer {
     width: 600px;
     min-height: 400px;
     height: 600px;
-    background-image: url('./img_assets/gif-ball-2.png');
+    /* background-image: url('./img_assets/gif-ball-2.png');
     background-size: 600px 600px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
   }
 
-  main .game-View img {
+  /* main #game-View-form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+  
+    /* .holder {
+      width:600px;
+      height:600px; */
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+      /* position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    } */
+
+  main .game-View #gif-ball-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+  }
+
+  main .game-View #retrieved-gif {
+    width: 80%;
     max-width: 600px;
     max-height: 300px;
     position: absolute;
-    top: 47%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
+  /* .ui-effects-placeholder {
+    display: none;
+  } */
 
 
 }

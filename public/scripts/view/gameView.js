@@ -15,6 +15,8 @@ var app = app || {};
     if (localStorage.loggedIn) $('.loggedIn').show();
     $('#question-form').off();
     $('#question-form').on('submit', (event) => {
+      // window.navigator.vibrate(200);
+      // console.log('vibrate');
       event.preventDefault();
       let question = event.target.questionToGifBall.value;
       module.Game.fetchGif(question);
