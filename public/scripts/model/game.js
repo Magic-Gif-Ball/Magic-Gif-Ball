@@ -88,12 +88,7 @@ $('#hamburger-icon').click(function(){
 });
 
 $('#ask-button').click(function(){
-  // $('#retrieved-gif').toggle();
   $('#retrieved-gif, .game-View input, .game-View p, .game-View button').toggle();
   $('.game-View').effect('shake');
   $('#retrieved-gif, .game-View input, .game-View p, .game-View button').delay(1000).fadeToggle();
 });
-
-// $('#home-menu-link, update-menu-link, #history-menu-link, #about-menu-link, #login-menu-link, #logout-menu-link').click(function(){
-//   $('#menu').hide();
-// });

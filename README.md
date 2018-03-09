@@ -103,8 +103,12 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 
 03/08/2018 1920 - styled at the projector with programming mob and edwin who was very helpful. 
 
+03/08/2018 2230 - add shake effect
+
 ##### Day 5
-03/09/2018 1300 - presentation
+03/09/2018 1030 - complete about us page
+
+03/09/2018 1330 - presentation
 
 ## Credits and Collaborations
 - https://gitignore.io
@@ -115,8 +119,7 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 - https://api.jquery.com
 - https://leonard.io/blog/2012/11/handlebars-array-access/
 - https://css-tricks.com/centering-css-complete-guide/
+- https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix
 - Font Awesome
 - StackOverflow
 - Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff, Edwin)
-- https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix
-
