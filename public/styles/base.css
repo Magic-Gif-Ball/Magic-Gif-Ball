@@ -48,7 +48,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3vw;
+  font-size: 35px;
 }
 
 h3 {
@@ -65,7 +65,9 @@ a {
 }
 
 label {
-  font-size: 25px;
+  text-align: center;
+  font-size: 35px;
+  margin: 10px;
 }
 
 input {

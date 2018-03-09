@@ -22,7 +22,7 @@ const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
       data: {tag, questionText, user}
     })
       .then(result => {
-        $('#question-form img').attr('src', result);
+        $('#retrieved-gif').attr('src', result);
         $('#question-form p').text(tag);
       })
       .catch(console.error);
@@ -85,6 +85,13 @@ const __API_URL__ = 'https://magic-gif-ball.herokuapp.com';
 
 $('#hamburger-icon').click(function(){
   $('#menu').toggle();
+});
+
+$('#ask-button').click(function(){
+  // $('#retrieved-gif').toggle();
+  $('#retrieved-gif, .game-View input, .game-View p, .game-View button').toggle();
+  $('.game-View').effect('shake');
+  $('#retrieved-gif, .game-View input, .game-View p, .game-View button').delay(1000).fadeToggle();
 });
 
 // $('#home-menu-link, update-menu-link, #history-menu-link, #about-menu-link, #login-menu-link, #logout-menu-link').click(function(){

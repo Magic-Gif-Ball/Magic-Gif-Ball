@@ -19,7 +19,7 @@ section h2 {
   text-align: center;
 }
 
-h3, label {
+h3 {
   text-align: center;
   font-size: 20px;
   margin: 10px;
@@ -44,13 +44,23 @@ main .game-View {
   margin-right: auto;
   width: 375px;
   min-height: 400px;
-  background-image: url('./img_assets/gif-ball-2.png');
+  /* background-image: url('./img_assets/gif-ball-2.png');
   background-size: 375px 375px;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 main .game-View form {
   margin-top: 28px;
+}
+
+/* 8 ball picture */
+main .game-View #gif-ball-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 375px;
+  height: 375px;
 }
 
 main .game-View input {
@@ -63,18 +73,19 @@ main .game-View input {
   transform: translate(-50%, -50%);
 }
 
-main .game-View img {
+/* gif from giphy */
+main .game-View #retrieved-gif {
   max-width: 300px;
   max-height: 200px;
   position: absolute;
-  top: 47%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 main .game-View p {
   /* text-align: center; */
-  color: rgb(95, 95, 95);
+  color:#56efa7;
   position: absolute;
   top: 77%;
   left: 50%;
@@ -90,25 +101,45 @@ main .game-View button {
 }
 
 /* about us view container */
-main .about-Us .containing-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-}
 
+main .about-Us {
+  height: 800px;
+  overflow: auto;
+}
 
 main .about-Us .about-Us-profile {
-  display: inline-block;
+  float: left;
   max-width: 200px;
   margin: 20px; 
+  height: 700px;
 }
 
-
-main .about-Us .about-Us-profile img {
+main .about-Us .about-Us-profile > img {
   width: 200px;
 }
 
+.link-icon {
+  width: 15px;
+  height: 15px;
+  width: 25%;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
 
+.link-icon img {
+  widows: 15px;
+}
+
+#tyler-about-div {
+  /* clear: both; */
+  height: 1px;
+  width: 100%;
+}
+
+/* .clear-fix {
+  clear: both;
+} */
 
 
 /* historyView container  */
@@ -120,6 +151,17 @@ main .history-container {
   position: relative;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+main .history-View h2 {
+  width: 40%;
+  margin: 30px auto;
+  padding: 15px;
+
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f65f9e;
+  /* margin: 30px; */
 }
 
 main .history-View .history-container .history-absolute-container {
@@ -143,9 +185,14 @@ main .history-View .history img {
 
 /* update view */
 
+main .update-View * {
+  text-align: center;
+}
+
 main .update-View {
   width: 80%;
   /* height: 350px; */
+  min-width: 350px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
@@ -180,6 +227,7 @@ main .update-View form input{
 
 footer {
   text-align: center;
+  padding-top: 35px;
 }
 
 @media only screen and (min-width: 800px) {
@@ -198,6 +246,21 @@ footer {
     border-radius: 10px;
     background-color: #f65f9e;
   }
+.about-Us {
+    max-width: 1200px;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #f65f9e;
+  }
+
+  /* #tyler-about-div {
+    clear: none;
+  } */
 
   main .game-View {
     position: relative;
@@ -206,18 +269,55 @@ footer {
     width: 600px;
     min-height: 400px;
     height: 600px;
-    background-image: url('./img_assets/gif-ball-2.png');
+    /* background-image: url('./img_assets/gif-ball-2.png');
     background-size: 600px 600px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
   }
 
-  main .game-View img {
-  max-width: 600px;
-  max-height: 400px;
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  /* main #game-View-form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+  
+    /* .holder {
+      width:600px;
+      height:600px; */
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+      /* position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    } */
+
+  main .game-View #gif-ball-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+  }
+
+  main .game-View #retrieved-gif {
+    width: 80%;
+    max-width: 600px;
+    max-height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* .ui-effects-placeholder {
+    display: none;
+  } */
+
 
 }
