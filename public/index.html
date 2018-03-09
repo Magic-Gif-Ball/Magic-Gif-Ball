@@ -69,13 +69,13 @@
   <div class="wrapper">
   <header>
     <a href="/"><h1>Magic Gif Ball</h1></a>    
-      <h2>Welcome<span id="loginName"></span>!</h2>
+      <h2>Welcome<span class="loginName"></span>!</h2>
       <img id="hamburger-icon" src="./styles/img_assets/white_Menu-icon.png" width="30" alt="hamburger menu icon" href="update">
 
       <nav id="menu">
         <ul>
           <li><a id="home-menu-link" href="/">Home</a></li>
-          <li class="loggedIn"><a id="update-menu-link" href="/update">Customize Tags</a></li>
+          <li class="loggedIn"><a id="update-menu-link" href="/update">Customize Repsonses</a></li>
           <li class="loggedIn"><a id="history-menu-link" href="/history">History</a></li>
           <li><a id="about-menu-link" href="/about">About the Creators</a></li>
           <li><a id="login-menu-link" href="/login">Login</a></li>
@@ -88,46 +88,48 @@
       
       <section class="about-Us container">
       <h2>About the Creators:</h2>
-      <div class="containing-div">
 
         <div class="about-Us-profile">
           <h3>Beverly</h3>
           <img src="about-pics/haronsPic.jpg">
           <p>Beverly is a Code Fellows student in Seattle learning to become a web developer. When she's not coding or walking her dog, you can find her wasting countless hours looking at random GIFs.</p>
-          <p><a href="https://www.linkedin.com/in/beverly-pham/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
-            <a href="https://github.com/zarkle" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a></p>
+          <a href="https://www.linkedin.com/in/beverly-pham/" target="_blank">
+            <img class="link-icon" src="/styles/img_assets/linkedin.svg">
+          </a>
+          <a href="https://github.com/zarkle" target="_blank">
+            <img class="link-icon" src="/styles/img_assets/github.svg"></a>
         </div>
         
         <div class="about-Us-profile">
           <h3>Patricia</h3>
           <img src="about-pics/haronsPic.jpg">
-          <p>Patricia likes snacking and coding and wierd Canadian snack foods that her sister brings back from Vancouver. She has really been enjoying software development because it lets her snack and code at the same time.</p>
-          <p><a href="https://www.linkedin.com/in/patricia-raftery/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
-            <a href="https://github.com/Patricia888" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a></p>
+          <p>Patricia likes snacking and coding and weird Canadian snack foods that her sister brings back from Vancouver. She has really been enjoying software development because it lets her snack and code at the same time.</p>
+          <a href="https://www.linkedin.com/in/patricia-raftery/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
+            <a href="https://github.com/Patricia888" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a>
         </div>
         
         <div class="about-Us-profile">
           <h3>Tyler</h3>
           <img src="about-pics/haronsPic.jpg">
           <p>Why he's awesome</p>
-          <p><a href="https://www.linkedin.com/in/tylerfishbone/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
-            <a href="https://github.com/tyler-fishbone" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a></p>
+          <a href="https://www.linkedin.com/in/tylerfishbone/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
+          <a href="https://github.com/tyler-fishbone" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a>
         </div>
         
         <div class="about-Us-profile">
           <h3>Haron</h3>
           <img src="about-pics/haronsPic.jpg">
           <p>Why he's also awesome</p>
-          <p><a href="https://www.linkedin.com/in/haron-yunis-b1332a114/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
-            <a href="https://github.com/haronYunis" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a></p>
+          <a href="https://www.linkedin.com/in/haron-yunis-b1332a114/" target="_blank"><img class="link-icon" src="/styles/img_assets/linkedin.svg"></a>
+            <a href="https://github.com/haronYunis" target="_blank"><img class="link-icon" src="/styles/img_assets/github.svg"></a>
         </div>
-      </div>
+        <div class="clear-fix"></div>
     </section>
     
     <section class="game-View container">
       <div id="game-View-form-container">
         <form action="" id="question-form">
-          <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question to the Magic Gif Ball... if you dare...">
+          <input type="text" name="questionToGifBall" placeholder="Enter a Y/N Question">
           <img src="https://vectr.com/tylerfishbone/b17UlaIL1J.svg?width=355&height=200&select=b17UlaIL1Jpage0" alt="">
           <p></p>
           <button type="submit">Ask!</button>
@@ -144,9 +146,8 @@
       
       <section class="login-View container">
         <form action="" id="login-form">
-          <label>Enter a Username:
+          <label>Enter a Username:</label>
               <input type="text" name="userName" placeholder="Username">
-          </label>
           <button type="submit">Submit</button>
         </form>
       </section>
@@ -158,7 +159,7 @@
   </div> 
 
   <footer class="footer">
-    <p>&copy; 2018 Magic Gif Ball</p>
+    <p>&copy; 2018 Magic Gif Ball - powered by Giphy</p>
   </footer>
       
   <!-- jQuery, Handlebars, and page.js -->
