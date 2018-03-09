@@ -1,6 +1,3 @@
-/* modules */
-
-
 header {
   padding: 10px;
   border-bottom: 1px solid white;
@@ -44,9 +41,6 @@ main .game-View {
   margin-right: auto;
   width: 375px;
   min-height: 400px;
-  /* background-image: url('./img_assets/gif-ball-2.png');
-  background-size: 375px 375px;
-  background-repeat: no-repeat; */
 }
 
 main .game-View form {
@@ -84,7 +78,6 @@ main .game-View #retrieved-gif {
 }
 
 main .game-View p {
-  /* text-align: center; */
   color:#56efa7;
   position: absolute;
   top: 77%;
@@ -101,7 +94,6 @@ main .game-View button {
 }
 
 /* about us view container */
-
 main .about-Us {
   height: 800px;
   overflow: auto;
@@ -132,18 +124,11 @@ main .about-Us .about-Us-profile > img {
 }
 
 #tyler-about-div {
-  /* clear: both; */
   height: 1px;
   width: 100%;
 }
 
-/* .clear-fix {
-  clear: both;
-} */
-
-
 /* historyView container  */
-
 main .history-container {
   margin-left: auto;
   margin-right: auto;
@@ -157,11 +142,9 @@ main .history-View h2 {
   width: 40%;
   margin: 30px auto;
   padding: 15px;
-
   border: 1px solid white;
   border-radius: 10px;
   background-color: #f65f9e;
-  /* margin: 30px; */
 }
 
 main .history-View .history-container .history-absolute-container {
@@ -180,18 +163,13 @@ main .history-View .history img {
   max-height: 200px;
 }
 
-
-
-
 /* update view */
-
 main .update-View * {
   text-align: center;
 }
 
 main .update-View {
   width: 80%;
-  /* height: 350px; */
   min-width: 350px;
   margin-left: auto;
   margin-right: auto;
@@ -222,18 +200,13 @@ main .update-View form input{
   padding: 10px;
 }
 
-
 /* footer */
-
 footer {
   text-align: center;
   padding-top: 35px;
 }
 
 @media only screen and (min-width: 800px) {
-  /* header {
-  background-color: wheat;
-  } */
 
   .login-View, .update-View, .error-View, .about-Us, .history-container {
     max-width: 700px;
@@ -246,6 +219,7 @@ footer {
     border-radius: 10px;
     background-color: #f65f9e;
   }
+
 .about-Us {
     max-width: 1200px;
     min-height: 350px;
@@ -258,10 +232,6 @@ footer {
     background-color: #f65f9e;
   }
 
-  /* #tyler-about-div {
-    clear: none;
-  } */
-
   main .game-View {
     position: relative;
     margin-left: auto;
@@ -269,32 +239,7 @@ footer {
     width: 600px;
     min-height: 400px;
     height: 600px;
-    /* background-image: url('./img_assets/gif-ball-2.png');
-    background-size: 600px 600px;
-    background-repeat: no-repeat; */
   }
-
-  /* main #game-View-form-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
-  
-    /* .holder {
-      width:600px;
-      height:600px; */
-      /* position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); */
-      /* position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-    } */
 
   main .game-View #gif-ball-image {
     position: absolute;
@@ -314,10 +259,4 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  /* .ui-effects-placeholder {
-    display: none;
-  } */
-
-
 }
