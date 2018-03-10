@@ -126,4 +126,5 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 - https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix
 - Font Awesome
 - StackOverflow
+- GIPHY Cam App
 - Also special thanks to the instructors and TAs that helped us along the way (Allie, Vinicio, Kat, Nicholas, Jeff, Edwin)
