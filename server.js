@@ -30,7 +30,7 @@ app.get('/api/v1/gif/random', (req, res) => {
     .catch(console.error)
     .then((response) => {
       client.query(`
-      INSERT INTO questions(gif, questions, userid) VALUES($1, $2, $3)`, [response.data.images.original.gif_url, req.query.questionText, req.query.user]
+      INSERT INTO questions(gif, questions, tag, userid) VALUES($1, $2, $3, $4)`, [response.data.images.original.gif_url, req.query.questionText, req.query.tag, req.query.user]
       );
       return response;
     })
@@ -92,6 +92,7 @@ function loadDB() {
     questions(
       questions_id SERIAL PRIMARY KEY,
       questions TEXT,
+      tag TEXT,
       gif VARCHAR (250),
       userid INTEGER NOT NULL REFERENCES users(users_id),
       location VARCHAR(250)

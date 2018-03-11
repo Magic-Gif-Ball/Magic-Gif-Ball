@@ -170,6 +170,15 @@ main .history-View .history img {
   max-height: 200px;
 }
 
+.history-container p {
+  color:#2d374f;
+  font-size: 15px;
+}
+
+.delete-btn {
+  font-size: 20px;
+}
+
 /* update view */
 main .update-View * {
   text-align: center;
