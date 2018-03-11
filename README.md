@@ -114,6 +114,12 @@ This app grabs GIFs from an external API. A SQL database is used for persistence
 
 03/09/2018 1330 - presentation
 
+##### Day 6
+03/10/2018 1030 - update Open Graph
+
+##### Day 7
+03/11/2018 1000 - add tag to history view
+
 ## Credits and Collaborations
 - https://gitignore.io
 - http://meyerweb.com/eric/tools/css/reset/ 
