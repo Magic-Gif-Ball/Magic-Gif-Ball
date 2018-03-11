@@ -8,11 +8,15 @@ var app = app || {};
 
   gameView.initGamePage = () => {
     $('.loggedIn').hide();
+    $('.loggedOut').show();
     $('.container').hide();
     $('#menu').hide();
     $('.game-View').show();
     if (!localStorage.tagArray) localStorage.tagArray = app.Game.randomArray;
-    if (localStorage.loggedIn) $('.loggedIn').show();
+    if (localStorage.loggedIn) {
+      $('.loggedIn').show();
+      $('.loggedOut').hide();
+    }
     $('#question-form').off();
     $('#question-form').on('submit', (event) => {
       // window.navigator.vibrate(200);

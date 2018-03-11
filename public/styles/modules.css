@@ -10,6 +10,13 @@ header img {
   right: 10px;
 }
 
+
+header p {
+  color:#56efa7;
+  font-size: 15px;
+  text-align: right;
+}
+
 /* global styles */
 section h2 {
   font-size: 28px;
