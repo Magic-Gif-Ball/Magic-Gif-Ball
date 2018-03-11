@@ -1,26 +1,31 @@
 'use strict';
+
 var app = app || {};
 
-(function(module) {
-
+(module => {
 
   const gameView = {};
 
-  gameView.initGamePage = function(ctx, next) {
+  gameView.initGamePage = () => {
+    $('.loggedIn').hide();
+    $('.loggedOut').show();
     $('.container').hide();
+    $('#menu').hide();
     $('.game-View').show();
+    if (!localStorage.tagArray) localStorage.tagArray = app.Game.randomArray;
+    if (localStorage.loggedIn) {
+      $('.loggedIn').show();
+      $('.loggedOut').hide();
+    }
+    $('#question-form').off();
     $('#question-form').on('submit', (event) => {
+      // window.navigator.vibrate(200);
+      // console.log('vibrate');
       event.preventDefault();
-      //save question input
       let question = event.target.questionToGifBall.value;
       module.Game.fetchGif(question);
     });
-
-    //other stuff
   };
-
-
-
 
   module.gameView = gameView;
 

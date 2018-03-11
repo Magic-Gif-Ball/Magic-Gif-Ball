@@ -1,0 +1,269 @@
+header {
+  padding: 10px;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+header img {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+}
+
+
+header p {
+  color:#56efa7;
+  font-size: 15px;
+  text-align: right;
+}
+
+/* global styles */
+section h2 {
+  font-size: 28px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.login-View, .update-View, .error-View, .about-Us, .history-container {
+  width: 80%;
+  min-height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f65f9e;
+}
+
+/* game-View container */
+main .game-View {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+  min-height: 400px;
+}
+
+main .game-View form {
+  margin-top: 28px;
+}
+
+/* 8 ball picture */
+main .game-View #gif-ball-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 375px;
+  height: 375px;
+}
+
+main .game-View input {
+  width: 60%;
+  border: 3px solid rgb(156, 156, 156);
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* gif from giphy */
+main .game-View #retrieved-gif {
+  max-width: 300px;
+  max-height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .game-View p {
+  color:#56efa7;
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .game-View button {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgb(156, 156, 156);
+}
+
+/* about us view container */
+main .about-Us {
+  height: 800px;
+  overflow: auto;
+}
+
+main .about-Us .about-Us-profile {
+  float: left;
+  max-width: 200px;
+  margin: 20px; 
+  height: 700px;
+}
+
+main .about-Us .about-Us-profile > img {
+  width: 200px;
+}
+
+.link-icon {
+  width: 15px;
+  height: 15px;
+  width: 25%;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.link-icon img {
+  widows: 15px;
+}
+
+#tyler-about-div {
+  height: 1px;
+  width: 100%;
+}
+
+/* historyView container  */
+main .history-container {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 350px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main .history-View h2 {
+  width: 40%;
+  margin: 30px auto;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f65f9e;
+}
+
+main .history-View .history-container .history-absolute-container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .history-View .history img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+  max-height: 200px;
+}
+
+/* update view */
+main .update-View * {
+  text-align: center;
+}
+
+main .update-View {
+  width: 80%;
+  min-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f65f9e;
+}
+
+main .update-View form input{
+  padding: 5px;
+}
+
+.login-View {
+  position:relative;
+}
+
+.login-View form {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-View form * {
+  padding: 10px;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding-top: 35px;
+}
+
+@media only screen and (min-width: 800px) {
+
+  .login-View, .update-View, .error-View, .about-Us, .history-container {
+    max-width: 700px;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #f65f9e;
+  }
+
+.about-Us {
+    max-width: 1200px;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #f65f9e;
+  }
+
+  main .game-View {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    min-height: 400px;
+    height: 600px;
+  }
+
+  main .game-View #gif-ball-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+  }
+
+  main .game-View #retrieved-gif {
+    width: 80%;
+    max-width: 600px;
+    max-height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

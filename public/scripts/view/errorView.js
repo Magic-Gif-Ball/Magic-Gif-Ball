@@ -2,18 +2,18 @@
 
 var app = app || {};
 
-(function (module) {
+(module => {
+
   const errorView = {};
 
   errorView.initErrorPage = function(err) {
     $('.container').hide();
     $('.error-View').show();
     $('#error-message').empty();
-
-    //From Book App:
-    // let template = Handlebars.compile($('#error-template').text());
-    // $('#error-message').append(template(err));
+    let template = Handlebars.compile($('#error-template').text());
+    $('.error-View').append(template(err));
   };
 
   module.errorView = errorView;
-})(app)
+
+})(app);

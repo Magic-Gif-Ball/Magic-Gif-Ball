@@ -1,4 +1,67 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
+.wrapper {
+  min-height: 100%;
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -60px;
+}
+  
 body {
-  background-color: #50c48a;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('./img_assets/seamless-background-80s67-.jpg');
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+header {
+   background-color: #2d374f;
+}
+
+footer {
+  background-color: #2d374f;
+  width:100%; 
+  border: 1px solid white;
+}
+
+.footer, .push {
+  height: 60px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5vw;
+  color: white;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 2vw;
+}
+
+p {
+  font-size: 20px;
+}
+
+a, input, button {
+  font-size: 25px;
+}
+
+label {
+  text-align: center;
+  font-size: 35px;
+  margin: 10px;
+}
+
+footer a {
+  font-size: 20px;
 }

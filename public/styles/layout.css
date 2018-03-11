@@ -1,16 +1,44 @@
-
-nav ul {
+header nav ul {
   list-style: none;
 }
 
-nav ul li {
-  float: left;
-  padding: 15px;
+header nav ul li {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
 }
 
+header nav a {
+  text-decoration-line: none;
+}
 
-@media only screen and (min-width: 640px) {
-  body {
-  background-color: wheat;
+button, input {
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.login-View {
+  text-align: center;
+  width: 50%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: auto;
+}
+
+@media only screen and (min-width: 900px) {
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: inline;
   }
 }
